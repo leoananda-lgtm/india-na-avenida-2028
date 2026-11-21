@@ -177,6 +177,10 @@ function Mocidade2018() {
     <section id="mocidade" className="section tight">
       <div className="wrap">
         <p className="eyebrow gold">Carnival in pictures</p>
+        <figure className="panorama reveal">
+          <img src="img/carnival-panorama.jpg" alt="Panoramic view of the Sambadrome stands and a samba school float during Carnival in Rio" loading="lazy" />
+          <figcaption>Panoramic view of the Sambadrome · Photo: Goodfreephotos (CC0)</figcaption>
+        </figure>
         <div className="mocidade-gallery">
           <figure className="reveal wide"><img src="img/carnival-float-avenue.jpg" alt="A colourful samba school float with the crowd filling the Sambadrome stands at night" loading="lazy" /><figcaption>Photo: David Groves / Unsplash</figcaption></figure>
           <figure className="reveal delay"><img src="img/carnival-dancer.jpg" alt="A smiling samba dancer on the avenue" loading="lazy" /><figcaption>Photo: David Groves / Unsplash</figcaption></figure>
