@@ -276,6 +276,13 @@ strong { color: #fff; }
 .media-src { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green-bright); font-weight: 700; }
 .media-go { margin-top: auto; color: var(--gold); font-weight: 700; font-size: .92rem; }
 
+/* Mocidade 2018 photos */
+.mocidade-gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 16px; margin: 36px 0 8px; }
+.mocidade-gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--card); border: 1px solid var(--line); }
+.mocidade-gallery img { width: 100%; height: 320px; object-fit: cover; transition: transform .8s ease; }
+.mocidade-gallery figure:hover img { transform: scale(1.04); }
+.mocidade-gallery figcaption { padding: 10px 14px; font-size: .8rem; color: var(--muted); }
+
 /* Travel */
 .sub { margin-top: 48px; color: var(--gold); }
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -330,6 +337,7 @@ strong { color: #fff; }
   .calc-out { padding: 22px; }
   .kit-grid { grid-template-columns: 1fr; }
   .kit-wide { grid-column: auto; }
+  .mocidade-gallery { grid-template-columns: 1fr; }
   .lounge-wall { left: 44%; top: 12%; width: 44%; height: 50%; }
 }
 @media print {

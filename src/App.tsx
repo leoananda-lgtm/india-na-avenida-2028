@@ -197,9 +197,14 @@ function Mocidade2018() {
             </a>
           ))}
         </div>
+        <div className="mocidade-gallery">
+          <figure className="reveal"><img src="img/mocidade-2018-sunrise.jpg" alt="A Mocidade reveller performs as the sun rises after the first night of Carnival at the Sambadrome, 2018" loading="lazy" /><figcaption>Photo: AFP / Mauro Pimentel</figcaption></figure>
+          <figure className="reveal delay"><img src="img/mocidade-2018-parade-1.jpg" alt="Mocidade Independente de Padre Miguel parading at the Sambadrome, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
+          <figure className="reveal delay2"><img src="img/mocidade-2018-parade-2.jpg" alt="Mocidade Independente de Padre Miguel members on the avenue, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
+        </div>
         <p className="note">
-          Photos from the press are copyrighted and are linked here rather than reproduced. Licensed or owned
-          photos of the 2028 parade will be added once they are available.
+          Photos: AFP (credited above). Permission to use them on this page should be confirmed with the agency
+          before publication. Licensed or owned photos of the 2028 parade will replace them once available.
         </p>
       </div>
     </section>
