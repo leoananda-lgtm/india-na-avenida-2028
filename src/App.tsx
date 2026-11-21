@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 import {
   QUOTAS, DAYS, PRICE_FULL, PRICE_CAMAROTE, TOTAL_INVITES,
   SCHOOL_SHARE, CAMAROTE_SHARE, EXPERIENCE_SHARE, TOTAL_PROJECT,
@@ -10,10 +10,17 @@ const NAV: [string, string][] = [
   ["carnival", "Carnival"],
   ["india", "India"],
   ["camarote", "Camarote"],
+  ["lounge", "Your brand"],
   ["quotas", "Quotas"],
   ["sponsor", "Sponsorship"],
-  ["media", "Media"],
   ["travel", "Travel"],
+];
+
+const QUOTES: { text: string; source: string }[] = [
+  { text: "The largest carnival in the world.", source: "Guinness World Records" },
+  { text: "More than 6.4 million revellers in Rio de Janeiro alone.", source: "Government of Brazil" },
+  { text: "Rio de Janeiro breaks tourist records during Carnival 2025 and generates BRL 6.5 billion.", source: "Rio de Janeiro State Tourism" },
+  { text: "Rio's Carnival is the greatest stage in the world, and the Sapucaí is its most coveted showcase.", source: "Marquês de Sapucaí" },
 ];
 
 export default function App() {
@@ -21,11 +28,14 @@ export default function App() {
     <>
       <Header />
       <Hero />
+      <Quotes />
+      <Organisers />
       <Story />
       <Carnival />
       <IndiaSection />
       <Camarote />
       <GuestKit />
+      <LoungeBrand />
       <Quotas />
       <Sponsorship />
       <Activations />
@@ -63,26 +73,64 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="hero">
+      <img className="hero-bg" src="img/hero-party.jpg" alt="" aria-hidden="true" />
+      <div className="hero-shade" aria-hidden="true" />
       <div className="wrap hero-grid">
         <div className="hero-text reveal">
-          <p className="eyebrow">Carnival of Rio 2028 · Marquês de Sapucaí</p>
+          <p className="eyebrow gold">Carnival of Rio 2028 · Marquês de Sapucaí</p>
           <h1>
             Eighty years of friendship, <em>on the greatest stage on Earth.</em>
           </h1>
           <p className="lead">
             A private camarote and a samba school tribute that celebrate 80 years of diplomatic relations
-            between Brazil and India, with flavours, knowledge and connections crossing the ocean.
+            between Brazil and India.
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href="#quotas">See the quotas</a>
             <a className="btn btn-ghost" href="#sponsor">Sponsor the tribute</a>
           </div>
         </div>
-        <div className="hero-art reveal delay">
-          <img src="img/logo-stacked.png" alt="80 Years of Diplomatic Relations Brazil India 1948–2028" />
+        <div className="hero-mark reveal delay">
+          <div className="mark-plate">
+            <img src="img/logo-80-icon.png" alt="80 Years of Diplomatic Relations Brazil India, 1948–2028" />
+          </div>
+          <p className="mark-caption">Brazil · India<br />1948 – 2028</p>
         </div>
       </div>
       <div className="flagbar" aria-hidden="true"><span /><span /><span /></div>
+    </section>
+  );
+}
+
+function Quotes() {
+  return (
+    <section className="quotes" aria-label="What is said about Carnival">
+      <div className="wrap quote-grid">
+        {QUOTES.map((q, i) => (
+          <figure key={q.text} className={`quote-card reveal ${i % 2 ? "delay" : ""}`}>
+            <blockquote>“{q.text}”</blockquote>
+            <figcaption>— {q.source}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Organisers() {
+  return (
+    <section className="organisers" aria-label="Organisers">
+      <div className="wrap organisers-inner">
+        <p className="eyebrow gold">Organised by</p>
+        <div className="org-logos">
+          <div className="org-logo reveal">
+            <img src="img/logo-camara.png" alt="India Brazil Chamber of Commerce, since 2003" />
+          </div>
+          <div className="org-logo reveal delay">
+            <img src="img/logo-frances.png" alt="Experiences do Francês" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -91,7 +139,7 @@ function Story() {
   return (
     <section id="story" className="section">
       <div className="wrap">
-        <p className="eyebrow">Two products, one celebration</p>
+        <p className="eyebrow gold">Two products, one celebration</p>
         <h2>A bridge between two cultures and two great economies.</h2>
         <div className="two-col">
           <p>
@@ -127,7 +175,7 @@ function Pillar({ n, title, text }: { n: string; title: string; text: string }) 
 
 function Carnival() {
   return (
-    <section id="carnival" className="section dark">
+    <section id="carnival" className="section alt">
       <div className="wrap">
         <p className="eyebrow gold">The greatest show on Earth</p>
         <h2>Carnival is Brazil's stage for culture, music and sponsorship.</h2>
@@ -166,7 +214,7 @@ function IndiaSection() {
     ["19th c.", "Zebu cattle from India cross the ocean and transform Brazilian livestock."],
     ["1948", "Diplomatic relations are established between Brazil and India."],
     ["2009", "Caminho das Índias brings Indian culture into millions of Brazilian homes."],
-    ["Today", "A strategic partnership with trade near US$ 15 bn, targeting US$ 20–30 bn by 2030."],
+    ["Today", "A strategic partnership across trade, technology and culture."],
   ];
   const themes: [string, string][] = [
     ["Roots & discovery", "Cabral's voyage, spices, mango, jackfruit and coconut."],
@@ -181,7 +229,7 @@ function IndiaSection() {
   return (
     <section id="india" className="section">
       <div className="wrap">
-        <p className="eyebrow">Roots that crossed the ocean</p>
+        <p className="eyebrow gold">Roots that crossed the ocean</p>
         <h2>More than 500 years of connection.</h2>
         <ol className="timeline">
           {timeline.map(([y, t]) => (
@@ -206,15 +254,15 @@ function IndiaSection() {
 
 function Camarote() {
   const groups: [string, string[]][] = [
-    ["Structure", ["1,800 m² air-conditioned", "Furnishing and décor by a designer", "Licences and insurance", "Sector 9, odd side, central position"]],
+    ["Structure", ["Air-conditioned camarote", "Furnishing and décor by a designer", "Licences and insurance", "Sector 9, odd side, central position"]],
     ["Experience", ["Luxury concierge on demand", "Bilingual reception", "Exclusive meeting point from 9 pm", "Guest T-shirts customised for the tribute"]],
     ["Food & drinks", ["Indian kitchen by renowned chefs", "Japanese cuisine and continental breakfast", "Premium open bar and champagne", "Five bars with bartenders"]],
     ["Entertainment", ["Samba and passistas among the schools", "Indian dances", "Carnival King and Queen", "National and international DJs"]],
   ];
   return (
-    <section id="camarote" className="section light">
+    <section id="camarote" className="section alt">
       <div className="wrap">
-        <p className="eyebrow">Private Camarote · Global Hospitality</p>
+        <p className="eyebrow gold">Private Camarote · Global Hospitality</p>
         <h2>Premium hospitality on the avenue, with India on the guest list.</h2>
         <div className="gallery three">
           <figure className="reveal"><img src="img/camarote-buffet.jpg" alt="Buffet with Brazil and India themed decoration" loading="lazy" /></figure>
@@ -237,7 +285,7 @@ function Camarote() {
 
 function GuestKit() {
   return (
-    <section id="kit" className="section dark">
+    <section id="kit" className="section">
       <div className="wrap">
         <p className="eyebrow gold">Guest kit</p>
         <h2>Dressed for the avenue, and a gift to take home.</h2>
@@ -259,6 +307,102 @@ function GuestKit() {
   );
 }
 
+type Plate = "ivory" | "navy";
+type Preset = { id: string; label: string; src: string | null; plate: Plate; alt: string };
+
+const PRESETS: Preset[] = [
+  { id: "80", label: "80 Years", src: "img/logo-80-icon.png", plate: "ivory", alt: "80 Years of Diplomatic Relations Brazil India" },
+  { id: "camara", label: "Câmara", src: "img/logo-camara-color.png", plate: "ivory", alt: "India Brazil Chamber of Commerce" },
+  { id: "frances", label: "Experiences do Francês", src: "img/logo-frances.png", plate: "navy", alt: "Experiences do Francês" },
+];
+
+function LoungeBrand() {
+  const [preset, setPreset] = useState<Preset>(PRESETS[0]);
+  const [uploaded, setUploaded] = useState<string | null>(null);
+  const [plate, setPlate] = useState<Plate>(preset.plate);
+  const [fileName, setFileName] = useState<string>("");
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    return () => { if (uploaded) URL.revokeObjectURL(uploaded); };
+  }, [uploaded]);
+
+  const logoSrc = uploaded ?? preset.src ?? "";
+  const logoAlt = uploaded ? (fileName || "Uploaded brand") : preset.alt;
+
+  function pickPreset(p: Preset) {
+    setPreset(p);
+    setPlate(p.plate);
+    setUploaded(null);
+    setFileName("");
+    if (fileRef.current) fileRef.current.value = "";
+  }
+
+  function onUpload(e: ChangeEvent<HTMLInputElement>) {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    const url = URL.createObjectURL(f);
+    setUploaded((old) => { if (old) URL.revokeObjectURL(old); return url; });
+    setFileName(f.name);
+    setPlate("ivory");
+  }
+
+  return (
+    <section id="lounge" className="section lounge-section">
+      <div className="wrap">
+        <p className="eyebrow gold">Your brand in the lounge</p>
+        <h2>See your logo on the camarote wall.</h2>
+        <p className="lead-small">
+          Choose a logo or upload your own file (PNG with transparent background works best). The preview
+          updates on the lounge render. Files stay in this browser and are not saved.
+        </p>
+
+        <div className="lounge-grid">
+          <div className="lounge-controls">
+            <h4>1 · Choose a logo</h4>
+            <div className="preset-row" role="group" aria-label="Logo presets">
+              {PRESETS.map((p) => (
+                <button
+                  key={p.id}
+                  className={`preset ${!uploaded && preset.id === p.id ? "on" : ""}`}
+                  onClick={() => pickPreset(p)}
+                >
+                  {p.label}
+                </button>
+              ))}
+            </div>
+
+            <h4>2 · Upload your logo</h4>
+            <label className="upload">
+              <input ref={fileRef} type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" onChange={onUpload} />
+              <span>{fileName ? `Using: ${fileName}` : "Choose a file (PNG, JPG, SVG or WEBP)"}</span>
+            </label>
+
+            <h4>3 · Wall colour</h4>
+            <div className="plate-row" role="group" aria-label="Wall colour">
+              <button className={`plate-btn ${plate === "ivory" ? "on" : ""}`} onClick={() => setPlate("ivory")}>
+                <span className="swatch ivory" /> Ivory
+              </button>
+              <button className={`plate-btn ${plate === "navy" ? "on" : ""}`} onClick={() => setPlate("navy")}>
+                <span className="swatch navy" /> Navy
+              </button>
+            </div>
+            <p className="small muted">Use Ivory for coloured logos and Navy for white logos.</p>
+          </div>
+
+          <div className="lounge-stage">
+            <img className="lounge-img" src="img/lounge-wall.jpg" alt="Camarote lounge render with a brand wall" loading="lazy" />
+            <div className={`lounge-wall ${plate}`}>
+              {logoSrc ? <img src={logoSrc} alt={logoAlt} /> : <span className="wall-empty">Your logo here</span>}
+            </div>
+          </div>
+        </div>
+        <p className="note">Illustrative render. The final lounge wall will be designed for the selected brand.</p>
+      </div>
+    </section>
+  );
+}
+
 function Quotas() {
   const [sponsor, setSponsor] = useState(true);
   const [selected, setSelected] = useState(3);
@@ -268,9 +412,9 @@ function Quotas() {
   const totalAll = useMemo(() => QUOTAS.reduce((a, x) => a + quotaPrice(x, sponsor), 0), [sponsor]);
 
   return (
-    <section id="quotas" className="section">
+    <section id="quotas" className="section alt">
       <div className="wrap">
-        <p className="eyebrow">Quotas and pricing</p>
+        <p className="eyebrow gold">Quotas and pricing</p>
         <h2>Choose your quota. Price scales with the number of guests.</h2>
 
         <div className="toggle" role="tablist" aria-label="Product">
@@ -293,7 +437,7 @@ function Quotas() {
             ))}
           </div>
           <div className="calc-out">
-            <p className="eyebrow">{q.label}</p>
+            <p className="eyebrow gold">{q.label}</p>
             <div className="big-price">{usd(total)}</div>
             <p className="muted">{brl(total)} · {quotaInvites(q)} invitations × {usd2(perGuest)} ({brl2(perGuest)})</p>
             <table className="days">
@@ -340,7 +484,7 @@ function Quotas() {
         </div>
         <p className="small muted">
           Showing the {sponsor ? "full" : "camarote-only"} total of {usd(totalAll)} ({brl(totalAll)}) for all quotas.
-          US$ values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1 (commercial dollar, 18 Nov 2026) and are converted from the BRL spreadsheet.
+          US$ values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1 and are converted from the BRL spreadsheet.
         </p>
       </div>
     </section>
@@ -350,7 +494,7 @@ function Quotas() {
 function Sponsorship() {
   const pct = (v: number) => ((v / TOTAL_PROJECT) * 100).toFixed(1) + "%";
   return (
-    <section id="sponsor" className="section dark">
+    <section id="sponsor" className="section">
       <div className="wrap">
         <p className="eyebrow gold">Samba School Tribute</p>
         <h2>Put India on the avenue, and your brand with it.</h2>
@@ -389,9 +533,9 @@ function Activations() {
     "LED ad at the camarote", "Adhesive column", "Corner / shops", "Influencer marketing",
   ];
   return (
-    <section className="section light tight">
+    <section className="section alt tight">
       <div className="wrap">
-        <p className="eyebrow">Additional activations</p>
+        <p className="eyebrow gold">Additional activations</p>
         <h2>Extra visibility, on request.</h2>
         <div className="chips-static">
           {items.map((x) => <span key={x} className="tag">{x}</span>)}
@@ -412,7 +556,7 @@ function Media() {
   return (
     <section id="media" className="section">
       <div className="wrap">
-        <p className="eyebrow">Why it matters</p>
+        <p className="eyebrow gold">Why it matters</p>
         <h2>The world looks at Rio in February.</h2>
         <div className="media-grid">
           {links.map(([src, title, href, cta], i) => (
@@ -449,9 +593,9 @@ function Travel() {
     ["Insurance & visas", "Travel insurance and guidance on Brazilian visa requirements for each nationality."],
   ];
   return (
-    <section id="travel" className="section light">
+    <section id="travel" className="section alt">
       <div className="wrap">
-        <p className="eyebrow">Travel Hub</p>
+        <p className="eyebrow gold">Travel Hub</p>
         <h2>Plan the whole trip to the Sapucaí.</h2>
         <p className="lead-small">
           Camarote guests can book accommodation, transfers and experiences in one place. Rates are quoted on
@@ -486,7 +630,7 @@ function Travel() {
 
 function Contact() {
   return (
-    <section className="section dark cta">
+    <section className="section cta">
       <div className="wrap">
         <p className="eyebrow gold">Next steps</p>
         <h2>Let's bring India to the Sapucaí in 2028.</h2>
