@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ChangeEvent } from "react";
+import { useState } from "react";
 import {
   QUOTAS, DAYS, PRICE_FULL, PRICE_CAMAROTE, TOTAL_INVITES,
   SCHOOL_SHARE, CAMAROTE_SHARE, EXPERIENCE_SHARE, TOTAL_PROJECT,
@@ -42,6 +42,7 @@ export default function App() {
       <Activations />
       <Media />
       <Travel />
+      <Invitation />
       <Contact />
       <footer className="footer">
         <div className="wrap">
@@ -291,10 +292,13 @@ function Camarote() {
       <div className="wrap">
         <p className="eyebrow gold">Private Camarote · Global Hospitality</p>
         <h2>Premium hospitality on the avenue, with India on the guest list.</h2>
-        <div className="gallery three">
+        <div className="gallery pair">
           <figure className="reveal"><img src="img/camarote-buffet.jpg" alt="Buffet with Brazil and India themed decoration" loading="lazy" /></figure>
           <figure className="reveal delay"><img src="img/camarote-lounge.jpg" alt="Lounge area of the camarote" loading="lazy" /></figure>
-          <figure className="reveal delay2"><img src="img/camarote-bar.jpg" alt="Bar of the camarote with the 80 years logo" loading="lazy" /></figure>
+          <figure className="reveal"><img src="img/camarote-bar.jpg" alt="Bar of the camarote with the 80 years logo" loading="lazy" /></figure>
+          <figure className="reveal delay"><img src="img/camarote-terrace.jpg" alt="Terrace of the camarote overlooking the avenue" loading="lazy" /></figure>
+          <figure className="reveal"><img src="img/camarote-beauty.jpg" alt="Beauty area of the camarote with illuminated mirrors" loading="lazy" /></figure>
+          <figure className="reveal delay"><img src="img/camarote-empty.jpg" alt="Empty camarote lounge with the 80 years logo on the wall" loading="lazy" /></figure>
         </div>
         <div className="features">
           {groups.map(([k, list]) => (
@@ -334,100 +338,40 @@ function GuestKit() {
   );
 }
 
-type Plate = "ivory" | "navy";
-type Preset = { id: string; label: string; src: string | null; plate: Plate; alt: string };
-
-const PRESETS: Preset[] = [
-  { id: "camara", label: "Câmara", src: "img/logo-camara-color.png", plate: "ivory", alt: "India Brazil Chamber of Commerce" },
-  { id: "frances", label: "Experiences do Francês", src: "img/logo-frances.png", plate: "navy", alt: "Experiences do Francês" },
-];
-
 function LoungeBrand() {
-  const [preset, setPreset] = useState<Preset>(PRESETS[0]);
-  const [uploaded, setUploaded] = useState<string | null>(null);
-  const [plate, setPlate] = useState<Plate>(preset.plate);
-  const [fileName, setFileName] = useState<string>("");
-  const fileRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    return () => { if (uploaded) URL.revokeObjectURL(uploaded); };
-  }, [uploaded]);
-
-  const logoSrc = uploaded ?? preset.src ?? "";
-  const logoAlt = uploaded ? (fileName || "Uploaded brand") : preset.alt;
-
-  function pickPreset(p: Preset) {
-    setPreset(p);
-    setPlate(p.plate);
-    setUploaded(null);
-    setFileName("");
-    if (fileRef.current) fileRef.current.value = "";
-  }
-
-  function onUpload(e: ChangeEvent<HTMLInputElement>) {
-    const f = e.target.files?.[0];
-    if (!f) return;
-    const url = URL.createObjectURL(f);
-    setUploaded((old) => { if (old) URL.revokeObjectURL(old); return url; });
-    setFileName(f.name);
-    setPlate("ivory");
-  }
-
   return (
     <section id="lounge" className="section lounge-section">
       <div className="wrap">
         <p className="eyebrow gold">Your brand in the lounge</p>
-        <h2>See your logo on the camarote wall.</h2>
+        <h2>See how your brand can look on the camarote wall.</h2>
         <p className="lead-small">
-          Choose a logo or upload your own file (PNG with transparent background works best). The preview
-          updates on the lounge render. Files stay in this browser and are not saved.
+          This illustrative render shows a partner's logo beside the 80 Years emblem on the camarote wall. For each
+          company we present, we create a similar image with its own logo.
         </p>
+        <figure className="lounge-example reveal">
+          <img src="img/lounge-reference.jpg" alt="Illustrative camarote lounge with the 80 Years logo and a partner logo on the wall" loading="lazy" />
+          <figcaption>Illustrative example · partner logo shown for reference</figcaption>
+        </figure>
+      </div>
+    </section>
+  );
+}
 
-        <div className="lounge-grid">
-          <div className="lounge-controls">
-            <h4>1 · Choose a logo</h4>
-            <div className="preset-row" role="group" aria-label="Logo presets">
-              {PRESETS.map((p) => (
-                <button
-                  key={p.id}
-                  className={`preset ${!uploaded && preset.id === p.id ? "on" : ""}`}
-                  onClick={() => pickPreset(p)}
-                >
-                  {p.label}
-                </button>
-              ))}
-            </div>
-
-            <h4>2 · Upload your logo</h4>
-            <label className="upload">
-              <input ref={fileRef} type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp" onChange={onUpload} />
-              <span>{fileName ? `Using: ${fileName}` : "Choose a file (PNG, JPG, SVG or WEBP)"}</span>
-            </label>
-
-            <h4>3 · Wall colour</h4>
-            <div className="plate-row" role="group" aria-label="Wall colour">
-              <button className={`plate-btn ${plate === "ivory" ? "on" : ""}`} onClick={() => setPlate("ivory")}>
-                <span className="swatch ivory" /> Ivory
-              </button>
-              <button className={`plate-btn ${plate === "navy" ? "on" : ""}`} onClick={() => setPlate("navy")}>
-                <span className="swatch navy" /> Navy
-              </button>
-            </div>
-            <p className="small muted">Use Ivory for coloured logos and Navy for white logos.</p>
-          </div>
-
-          <div className="lounge-stage">
-            <img className="lounge-img" src="img/lounge-reference.jpg" alt="Camarote lounge render with a brand wall" loading="lazy" />
-            <div className={`lounge-wall ${plate}`}>
-              <div className="wall-logos">
-              <img className="wall-80" src="img/logo-80-icon.png" alt="80 Years of Diplomatic Relations Brazil India" />
-              <span className="wall-divider" aria-hidden="true" />
-              {logoSrc ? <img className="wall-brand" src={logoSrc} alt={logoAlt} /> : <span className="wall-empty">Your logo here</span>}
-            </div>
-            </div>
-          </div>
+function Invitation() {
+  return (
+    <section className="invite" aria-label="Invitation">
+      <img className="invite-bg" src="img/carnival-flags.jpg" alt="" aria-hidden="true" loading="lazy" />
+      <div className="invite-shade" aria-hidden="true" />
+      <div className="wrap invite-inner">
+        <p className="eyebrow gold">An invitation</p>
+        <h2 className="invite-title">Two flags. One rhythm. <em>One family.</em></h2>
+        <p className="invite-pt">
+          Brasil e Índia: 80 anos de irmandade, celebrados no coração do Carnaval. Venha dançar com a gente na Sapucaí em 2028.
+        </p>
+        <div className="cta-row">
+          <a className="btn btn-primary" href="#quotas">Reserve your quota</a>
+          <a className="btn btn-ghost" href="#travel">Plan your trip</a>
         </div>
-        <p className="note">Illustrative render. The final lounge wall will be designed for the selected brand.</p>
       </div>
     </section>
   );
