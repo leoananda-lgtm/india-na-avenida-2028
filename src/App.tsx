@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import {
   QUOTAS, DAYS, PRICE_FULL, PRICE_CAMAROTE, TOTAL_INVITES,
   SCHOOL_SHARE, CAMAROTE_SHARE, EXPERIENCE_SHARE, TOTAL_PROJECT,
-  quotaInvites, quotaPrice, brl, brl2, usd, usd2, USD_RATE, CONTACT_EMAIL, SITE,
+  quotaInvites, quotaPrice, usd, usd2, USD_RATE, CONTACT_EMAIL, SITE,
 } from "./data";
 
 const NAV: [string, string][] = [
@@ -19,7 +19,7 @@ const NAV: [string, string][] = [
 const QUOTES: { text: string; source: string }[] = [
   { text: "The largest carnival in the world.", source: "Guinness World Records" },
   { text: "More than 6.4 million revellers in Rio de Janeiro alone.", source: "Government of Brazil" },
-  { text: "Rio de Janeiro breaks tourist records during Carnival 2025 and generates BRL 6.5 billion.", source: "Rio de Janeiro State Tourism" },
+  { text: "Rio de Janeiro breaks tourist records during Carnival 2025 and generates US$ 1.2 billion.", source: "Rio de Janeiro State Tourism" },
   { text: "Rio's Carnival is the greatest stage in the world, and the Sapucaí is its most coveted showcase.", source: "Marquês de Sapucaí" },
 ];
 
@@ -45,9 +45,9 @@ export default function App() {
       <Contact />
       <footer className="footer">
         <div className="wrap">
-          <p>India na Avenida 2028 · 80 Years of Diplomatic Relations Brazil · India (1948–2028)</p>
+          <p>India on the Avenue 2028 · 80 Years of Diplomatic Relations Brazil · India (1948–2028)</p>
           <p className="muted">
-            Prices are set in Brazilian reais (BRL) and shown in US dollars at an indicative rate of R$ {USD_RATE.toFixed(2)} per US$ 1; the final amount is fixed at the rate on the date of contract. Subject to final confirmation. Tax incentives depend on each
+            All prices are shown in US dollars at an indicative rate of R$ {USD_RATE.toFixed(2)} per US$ 1; the final amount is fixed at the rate on the date of contract. Subject to final confirmation. Tax incentives depend on each
             company's situation; consult your advisor.
           </p>
         </div>
@@ -60,7 +60,7 @@ function Header() {
   return (
     <header className="topbar">
       <div className="wrap topbar-inner">
-        <a href="#top" className="brand">India na Avenida 2028</a>
+        <a href="#top" className="brand">India on the Avenue 2028</a>
         <nav className="nav">
           {NAV.map(([id, label]) => (
             <a key={id} href={`#${id}`}>{label}</a>
@@ -78,6 +78,8 @@ function Hero() {
       <div className="hero-shade" aria-hidden="true" />
       <div className="wrap hero-grid">
         <div className="hero-text reveal">
+          <p className="project-title">India on the Avenue 2028</p>
+          <p className="project-title-hi" lang="hi">एवेन्यू पर भारत 2028</p>
           <p className="eyebrow gold">Carnival of Rio 2028 · Marquês de Sapucaí</p>
           <h1>
             Eighty years of friendship, <em>on the greatest stage on Earth.</em>
@@ -195,7 +197,7 @@ function Carnival() {
         <p className="eyebrow gold">The greatest show on Earth</p>
         <h2>Carnival is Brazil's stage for culture, music and sponsorship.</h2>
         <div className="stats">
-          <Stat big="R$ 6.5 bn" label="moved in the Rio economy during Carnival 2025" note="Rio de Janeiro state tourism" />
+          <Stat big="US$ 1.2 bn" label="moved in the Rio economy during Carnival 2025" note="Rio de Janeiro state tourism" />
           <Stat big="6.4 mi" label="revellers in Rio de Janeiro alone" note="Government of Brazil" />
           <Stat big="No. 1" label="largest carnival in the world" note="Guinness World Records" />
           <Stat big="800" label="invitations for the India–Brazil camarote" note="Global Hospitality" />
@@ -226,10 +228,12 @@ function Stat({ big, label, note }: { big: string; label: string; note: string }
 function IndiaSection() {
   const timeline: [string, string][] = [
     ["1500", "Cabral's fleet sails for the Indies and finds Brazil instead."],
+    ["16th c.", "Sugar cane, of Asian origin, becomes the first great Brazilian economic cycle, with the trade routes of the Indian Ocean behind it."],
+    ["18th c.", "The gold cycle links Brazil to Portuguese Asia and the Indian Ocean trade network."],
     ["19th c.", "Zebu cattle from India cross the ocean and transform Brazilian livestock."],
     ["1948", "Diplomatic relations are established between Brazil and India."],
     ["2009", "Caminho das Índias brings Indian culture into millions of Brazilian homes."],
-    ["Today", "A strategic partnership across trade, technology and culture."],
+    ["21st c.", "Technology and biotechnology: research, innovation and investment between the two countries."],
   ];
   const themes: [string, string][] = [
     ["Roots & discovery", "Cabral's voyage, spices, mango, jackfruit and coconut."],
@@ -246,6 +250,14 @@ function IndiaSection() {
       <div className="wrap">
         <p className="eyebrow gold">Roots that crossed the ocean</p>
         <h2>More than 500 years of connection.</h2>
+        <div className="family reveal">
+          <p className="family-motto">Vasudhaiva Kutumbakam · The world is one family</p>
+          <p>
+            India's foreign policy is guided by the idea that the world is one family. Brazil and India are brothers,
+            and the tribute to India at Carnival is the Brazilian people's way of saying thank you for that brotherhood
+            and for the partnership built over the years.
+          </p>
+        </div>
         <ol className="timeline">
           {timeline.map(([y, t]) => (
             <li key={y} className="reveal">
@@ -440,8 +452,8 @@ function Quotas() {
         </div>
         <p className="muted small">
           {sponsor
-            ? `Includes the camarote and the sponsorship of the samba school tribute to India (${usd2(PRICE_FULL)} per invitation, ${brl2(PRICE_FULL)}).`
-            : `Camarote and services only (${usd2(PRICE_CAMAROTE)} per invitation, ${brl2(PRICE_CAMAROTE)}). The samba school tribute is not included.`}
+            ? `Includes the camarote and the sponsorship of the samba school tribute to India (${usd2(PRICE_FULL)} per invitation).`
+            : `Camarote and services only (${usd2(PRICE_CAMAROTE)} per invitation). The samba school tribute is not included.`}
         </p>
 
         <div className="calc">
@@ -456,7 +468,7 @@ function Quotas() {
           <div className="calc-out">
             <p className="eyebrow gold">{q.label}</p>
             <div className="big-price">{usd(total)}</div>
-            <p className="muted">{brl(total)} · {quotaInvites(q)} invitations × {usd2(perGuest)} ({brl2(perGuest)})</p>
+            <p className="muted">{quotaInvites(q)} invitations × {usd2(perGuest)} per invitation</p>
             <table className="days">
               <thead><tr>{DAYS.map((d) => <th key={d}>{d}</th>)}</tr></thead>
               <tbody><tr>{q.days.map((n, i) => <td key={i}>{n}</td>)}</tr></tbody>
@@ -485,8 +497,8 @@ function Quotas() {
                   <td>{x.label}</td>
                   {x.days.map((n, i) => <td key={i}>{n}</td>)}
                   <td><strong>{quotaInvites(x)}</strong></td>
-                  <td>{usd(quotaPrice(x, false))}<small>{brl(quotaPrice(x, false))}</small></td>
-                  <td>{usd(quotaPrice(x, true))}<small>{brl(quotaPrice(x, true))}</small></td>
+                  <td>{usd(quotaPrice(x, false))}</td>
+                  <td>{usd(quotaPrice(x, true))}</td>
                 </tr>
               ))}
             </tbody>
@@ -494,7 +506,7 @@ function Quotas() {
         </div>
         <p className="small muted">
           Packages of {QUOTAS.map((x) => quotaInvites(x)).join(", ")} invitations. The project offers {TOTAL_INVITES} invitations in total.
-          US$ values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1 and are converted from the BRL spreadsheet.
+          Values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1.
         </p>
       </div>
     </section>
@@ -514,9 +526,9 @@ function Sponsorship() {
             samba-enredo, costumes and floats, and sponsors are recognised in the tribute.
           </p>
           <p>
-            Of the total project, the parade sponsorship represents {brl(SCHOOL_SHARE)} ({pct(SCHOOL_SHARE)}),
-            the camarote and its services {brl(CAMAROTE_SHARE)} ({pct(CAMAROTE_SHARE)}), and travel, taxes,
-            the commemorative book and operations {brl(EXPERIENCE_SHARE)} ({pct(EXPERIENCE_SHARE)}).
+            Of the total project, the parade sponsorship represents {usd(SCHOOL_SHARE)} ({pct(SCHOOL_SHARE)}),
+            the camarote and its services {usd(CAMAROTE_SHARE)} ({pct(CAMAROTE_SHARE)}), and travel, taxes,
+            the commemorative book and operations {usd(EXPERIENCE_SHARE)} ({pct(EXPERIENCE_SHARE)}).
           </p>
         </div>
         <div className="benefits">
@@ -672,7 +684,7 @@ function Contact() {
         </ol>
         <div className="cta-row">
           {CONTACT_EMAIL ? (
-            <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=India na Avenida 2028`}>Request a proposal</a>
+            <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=India on the Avenue 2028`}>Request a proposal</a>
           ) : (
             <p className="muted">Contact the team at {SITE}.</p>
           )}
