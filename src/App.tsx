@@ -371,16 +371,13 @@ function Partners() {
         </p>
         <div className="partner-grid">
           <div className="partner-card reveal">
-            <img src="img/logo-camara.png" alt="India Brazil Chamber of Commerce" />
-            <span className="partner-role">Chamber of Commerce</span>
+            <img src="img/logo-camara-h.png" alt="India Brazil Chamber of Commerce" />
           </div>
           <div className="partner-card reveal delay">
-            <img src="img/logo-frances.png" alt="Experiences do Francês" />
-            <span className="partner-role">Organiser</span>
+            <img src="img/logo-tcs.png" alt="TCS, Tata Consultancy Services" />
           </div>
-          <div className="partner-card partner-pending reveal delay2">
-            <span className="partner-tbd">TCS</span>
-            <span className="partner-role">Tata Consultancy Services · logo to be added</span>
+          <div className="partner-card partner-dark reveal delay2">
+            <img src="img/logo-frances.png" alt="Experiences do Francês" />
           </div>
         </div>
       </div>
