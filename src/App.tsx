@@ -25,6 +25,7 @@ export default function App() {
       <Carnival />
       <IndiaSection />
       <Camarote />
+      <GuestKit />
       <Quotas />
       <Sponsorship />
       <Activations />
@@ -229,6 +230,30 @@ function Camarote() {
           ))}
         </div>
         <p className="note">Camarote details reflect the Global Hospitality 2027 standard and will be confirmed for 2028.</p>
+      </div>
+    </section>
+  );
+}
+
+function GuestKit() {
+  return (
+    <section id="kit" className="section dark">
+      <div className="wrap">
+        <p className="eyebrow gold">Guest kit</p>
+        <h2>Dressed for the avenue, and a gift to take home.</h2>
+        <p className="lead-small kit-lead">
+          Every guest wears the Brazil–India 80 Years abada, designed for the camarote, and receives a gift box
+          with Brazilian and Indian specialties. Illustrative renders; final pieces to be confirmed.
+        </p>
+        <div className="kit-grid">
+          <figure className="reveal kit-wide"><img src="img/abada-collection.jpg" alt="Abada Premium collection in navy with the 80 years emblem" loading="lazy" /><figcaption>Abada Premium: the camarote collection</figcaption></figure>
+          <figure className="reveal delay"><img src="img/abada-couple.jpg" alt="Two guests wearing the camarote abadas" loading="lazy" /><figcaption>Camarote abadas for every guest</figcaption></figure>
+          <figure className="reveal delay2"><img src="img/abada-camarote-look.jpg" alt="Guest wearing the abada inside the camarote" loading="lazy" /><figcaption>Worn on the avenue, inside the camarote</figcaption></figure>
+          <figure className="reveal"><img src="img/abada-camarote-group.jpg" alt="Guests in abadas at the camarote on the parade night" loading="lazy" /><figcaption>Parade night, all guests in the same colours</figcaption></figure>
+          <figure className="reveal delay"><img src="img/brindes-kit.jpg" alt="Gift box with a bottle, teas, coffee, a scarf and a crystal keepsake" loading="lazy" /><figcaption>Gift box: Brazilian specialty coffee and Indian tea, scarf, crystal keepsake</figcaption></figure>
+          <figure className="reveal delay2"><img src="img/brindes-detail.jpg" alt="Close-up of the gift box with the 80 years pin and crystal keepsake" loading="lazy" /><figcaption>Gift box detail: 80 years pin and keepsake</figcaption></figure>
+        </div>
+        <p className="note">Images are illustrative mock-ups of the camarote kit.</p>
       </div>
     </section>
   );
