@@ -42,6 +42,8 @@ export default function App() {
       <Activations />
       <Media />
       <Travel />
+      <Partners />
+      <Finale />
       <Invitation />
       <Contact />
       <footer className="footer">
@@ -352,6 +354,51 @@ function LoungeBrand() {
           <img src="img/lounge-reference.jpg" alt="Illustrative camarote lounge with the 80 Years logo and a partner logo on the wall" loading="lazy" />
           <figcaption>Illustrative example · partner logo shown for reference</figcaption>
         </figure>
+      </div>
+    </section>
+  );
+}
+
+function Partners() {
+  return (
+    <section id="partners" className="section">
+      <div className="wrap">
+        <p className="eyebrow gold">Partners and institutions</p>
+        <h2>Who is already with us.</h2>
+        <p className="lead-small">
+          Companies and institutions already part of this project of closeness and brotherhood between Brazil and India.
+          More partners will be added as they confirm.
+        </p>
+        <div className="partner-grid">
+          <div className="partner-card reveal">
+            <img src="img/logo-camara.png" alt="India Brazil Chamber of Commerce" />
+            <span className="partner-role">Chamber of Commerce</span>
+          </div>
+          <div className="partner-card reveal delay">
+            <img src="img/logo-frances.png" alt="Experiences do Francês" />
+            <span className="partner-role">Organiser</span>
+          </div>
+          <div className="partner-card partner-pending reveal delay2">
+            <span className="partner-tbd">TCS</span>
+            <span className="partner-role">Tata Consultancy Services · logo to be added</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Finale() {
+  return (
+    <section className="section alt finale">
+      <div className="wrap">
+        <p className="eyebrow gold">The celebration</p>
+        <h2>Carnival, in colour.</h2>
+        <div className="finale-grid">
+          <figure className="reveal"><img src="img/carnival-powder.jpg" alt="A float covered in colourful powder with dancers from Brazil and India" loading="lazy" /></figure>
+          <figure className="reveal delay"><img src="img/carnival-aerial.jpg" alt="Aerial view of a golden elephant float on the Sambadrome avenue" loading="lazy" /></figure>
+        </div>
+        <p className="note">Illustrative images.</p>
       </div>
     </section>
   );
