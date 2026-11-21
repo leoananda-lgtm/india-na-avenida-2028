@@ -32,6 +32,7 @@ export default function App() {
       <Organisers />
       <Story />
       <Carnival />
+      <Mocidade2018 />
       <IndiaSection />
       <Camarote />
       <GuestKit />
@@ -91,10 +92,8 @@ function Hero() {
           </div>
         </div>
         <div className="hero-mark reveal delay">
-          <div className="mark-plate">
-            <img src="img/logo-80-icon.png" alt="80 Years of Diplomatic Relations Brazil India, 1948–2028" />
-          </div>
-          <p className="mark-caption">Brazil · India<br />1948 – 2028</p>
+          <img className="mark-logo" src="img/logo-80-icon.png" alt="80 Years of Diplomatic Relations Brazil India, 1948–2028" />
+          <p className="mark-caption">Brazil · India · 1948 – 2028</p>
         </div>
       </div>
       <div className="flagbar" aria-hidden="true"><span /><span /><span /></div>
@@ -170,6 +169,40 @@ function Pillar({ n, title, text }: { n: string; title: string; text: string }) 
       <h3>{title}</h3>
       <p>{text}</p>
     </div>
+  );
+}
+
+function Mocidade2018() {
+  const refs: [string, string, string][] = [
+    ["Rio Times", "Mocidade's India parade closes the first night of the Grupo Especial, February 2018.", "https://www.riotimesonline.com/?p=232463"],
+    ["Folha Vitória", "“Mocidade faz leitura literal do enredo e atrai com efeitos”: the parade and its staging.", "https://www.folhavitoria.com.br/cultura/mocidade-faz-leitura-literal-do-enredo-e-atrai-com-efeitos/"],
+    ["AFP photo gallery", "Photos of the Mocidade reveller at sunrise after the first night, by Mauro Pimentel (AFP).", "https://www.elespectador.com/?p=3605491"],
+  ];
+  return (
+    <section id="mocidade" className="section">
+      <div className="wrap">
+        <p className="eyebrow gold">A samba school that already told India's story</p>
+        <h2>Mocidade Independente, Carnival 2018: “Namastê”.</h2>
+        <p className="lead-small">
+          In 2018 Mocidade Independente de Padre Miguel paraded on the Sapucaí with a samba-enredo that paid tribute to
+          India and Hindu mythology, under the question “What do India and Brazil have in common?”. It is a precedent for
+          the tribute proposed here.
+        </p>
+        <div className="media-grid">
+          {refs.map(([src, title, href]) => (
+            <a key={href} className="media reveal" href={href} target="_blank" rel="noreferrer">
+              <span className="media-src">{src}</span>
+              <strong>{title}</strong>
+              <span className="media-go">Open the source →</span>
+            </a>
+          ))}
+        </div>
+        <p className="note">
+          Photos from the press are copyrighted and are linked here rather than reproduced. Licensed or owned
+          photos of the 2028 parade will be added once they are available.
+        </p>
+      </div>
+    </section>
   );
 }
 
@@ -311,7 +344,6 @@ type Plate = "ivory" | "navy";
 type Preset = { id: string; label: string; src: string | null; plate: Plate; alt: string };
 
 const PRESETS: Preset[] = [
-  { id: "80", label: "80 Years", src: "img/logo-80-icon.png", plate: "ivory", alt: "80 Years of Diplomatic Relations Brazil India" },
   { id: "camara", label: "Câmara", src: "img/logo-camara-color.png", plate: "ivory", alt: "India Brazil Chamber of Commerce" },
   { id: "frances", label: "Experiences do Francês", src: "img/logo-frances.png", plate: "navy", alt: "Experiences do Francês" },
 ];
@@ -393,7 +425,11 @@ function LoungeBrand() {
           <div className="lounge-stage">
             <img className="lounge-img" src="img/lounge-wall.jpg" alt="Camarote lounge render with a brand wall" loading="lazy" />
             <div className={`lounge-wall ${plate}`}>
-              {logoSrc ? <img src={logoSrc} alt={logoAlt} /> : <span className="wall-empty">Your logo here</span>}
+              <div className="wall-logos">
+              <img className="wall-80" src="img/logo-80-icon.png" alt="80 Years of Diplomatic Relations Brazil India" />
+              <span className="wall-divider" aria-hidden="true" />
+              {logoSrc ? <img className="wall-brand" src={logoSrc} alt={logoAlt} /> : <span className="wall-empty">Your logo here</span>}
+            </div>
             </div>
           </div>
         </div>
@@ -589,7 +625,6 @@ function Travel() {
     ["Samba school rehearsal visit", "Access to the school's quadra and rehearsals, with a tribute performance preview."],
     ["Costume fitting", "Fitting and delivery of costumes for guests who parade with the school."],
     ["India & Brazil dinner", "A curated gastronomic evening bridging Indian and Brazilian flavours."],
-    ["Golden Triangle trip", "A 10-day India programme covering New Delhi, Agra and Jaipur, for sponsors and guests."],
     ["Insurance & visas", "Travel insurance and guidance on Brazilian visa requirements for each nationality."],
   ];
   return (
@@ -614,6 +649,28 @@ function Travel() {
           {services.map(([t, d]) => (
             <div key={t} className="card reveal"><h4>{t}</h4><p>{d}</p></div>
           ))}
+        </div>
+
+        <h3 className="sub">Golden Triangle</h3>
+        <div className="triangle-grid">
+          <div className="triangle-card reveal">
+            <span className="tri-tag">For Brazilians</span>
+            <h4>Get into the spirit before the big moment.</h4>
+            <p>
+              Discover India before the celebration, on a leisure trip or a roadshow, with the support of the
+              India Brazil Chamber of Commerce. New Delhi, Agra and Jaipur await.
+            </p>
+            <a className="btn btn-ghost" href="#contact">Learn more →</a>
+          </div>
+          <div className="triangle-card reveal delay">
+            <span className="tri-tag">For Indian guests</span>
+            <h4>Make the most of your stay in Brazil.</h4>
+            <p>
+              Explore Rio and other regions of Brazil, and close major business deals with the support of the
+              India Brazil Chamber of Commerce.
+            </p>
+            <a className="btn btn-ghost" href="#contact">Learn more →</a>
+          </div>
         </div>
 
         <div className="calendar reveal">
