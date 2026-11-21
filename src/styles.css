@@ -245,6 +245,8 @@ em { color: var(--saffron); font-style: italic; }
   .toggle button { flex: 1; font-size: .85rem; padding: 11px 8px; }
   .hero { padding-top: 40px; }
   .calc-out { padding: 22px; }
+  .kit-grid { grid-template-columns: 1fr; }
+  .kit-wide { grid-column: auto; }
 }
 @media print {
   .topbar, .cta-row .btn, .toggle, .calc-pick, .flagbar { display: none !important; }
