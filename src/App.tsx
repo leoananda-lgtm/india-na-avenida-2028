@@ -177,18 +177,12 @@ function Mocidade2018() {
     <section id="mocidade" className="section tight">
       <div className="wrap">
         <p className="eyebrow gold">Carnival in pictures</p>
-        <figure className="panorama reveal">
-          <img src="img/carnival-panorama.jpg" alt="Panoramic view of the Sambadrome stands and a samba school float during Carnival in Rio" loading="lazy" />
-          <figcaption>Panoramic view of the Sambadrome · Photo: Goodfreephotos (CC0)</figcaption>
-        </figure>
-        <div className="mocidade-gallery">
-          <figure className="reveal wide"><img src="img/carnival-float-avenue.jpg" alt="A colourful samba school float with the crowd filling the Sambadrome stands at night" loading="lazy" /><figcaption>Photo: David Groves / Unsplash</figcaption></figure>
-          <figure className="reveal delay"><img src="img/carnival-dancer.jpg" alt="A smiling samba dancer on the avenue" loading="lazy" /><figcaption>Photo: David Groves / Unsplash</figcaption></figure>
-          <figure className="reveal"><img src="img/mocidade-2018-sunrise.jpg" alt="A Mocidade reveller performs as the sun rises after the first night of Carnival at the Sambadrome, 2018" loading="lazy" /><figcaption>Photo: AFP / Mauro Pimentel</figcaption></figure>
-          <figure className="reveal delay"><img src="img/mocidade-2018-parade-1.jpg" alt="Mocidade Independente de Padre Miguel parading at the Sambadrome, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
-          <figure className="reveal delay2"><img src="img/mocidade-2018-parade-2.jpg" alt="Mocidade Independente de Padre Miguel members on the avenue, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
+        <div className="carnival-gallery">
+          <figure className="reveal wide"><img src="img/carnival-1.jpg" alt="Samba school float with golden elephants and a Hindu deity in the Sambadrome, illustrative" loading="lazy" /></figure>
+          <figure className="reveal delay"><img src="img/carnival-2.jpg" alt="Dancers and a Shiva float on the avenue, illustrative" loading="lazy" /></figure>
+          <figure className="reveal"><img src="img/carnival-3.jpg" alt="Dragon float with the crowd filling the Sambadrome, illustrative" loading="lazy" /></figure>
         </div>
-        <p className="note">Photos: AFP, credited on each image. Permission to publish should be confirmed with the agency.</p>
+        <p className="note">Illustrative images of the 80 Years Carnival tribute.</p>
       </div>
     </section>
   );
@@ -411,7 +405,7 @@ function LoungeBrand() {
           </div>
 
           <div className="lounge-stage">
-            <img className="lounge-img" src="img/lounge-wall.jpg" alt="Camarote lounge render with a brand wall" loading="lazy" />
+            <img className="lounge-img" src="img/lounge-reference.jpg" alt="Camarote lounge render with a brand wall" loading="lazy" />
             <div className={`lounge-wall ${plate}`}>
               <div className="wall-logos">
               <img className="wall-80" src="img/logo-80-icon.png" alt="80 Years of Diplomatic Relations Brazil India" />

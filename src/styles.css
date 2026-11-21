@@ -216,7 +216,7 @@ strong { color: #fff; }
 .lounge-img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
 /* Wall area of the render (approximate position of the backdrop) */
 .lounge-wall {
-  position: absolute; left: 45.6%; top: 11.5%; width: 39%; height: 56%;
+  position: absolute; left: 53%; top: 21%; width: 46%; height: 24%;
   display: flex; align-items: center; justify-content: center; padding: 6%;
   border-radius: 6px; box-shadow: 0 0 40px rgba(255, 220, 150, .25);
 }
@@ -276,17 +276,13 @@ strong { color: #fff; }
 .media-src { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green-bright); font-weight: 700; }
 .media-go { margin-top: auto; color: var(--gold); font-weight: 700; font-size: .92rem; }
 
-/* Mocidade 2018 photos */
-.mocidade-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 36px 0 8px; }
-.panorama { margin: 36px 0 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--card); }
-.panorama img { width: 100%; height: 260px; object-fit: cover; object-position: center 40%; }
-.panorama figcaption { padding: 10px 14px; font-size: .8rem; color: var(--muted); }
-.mocidade-gallery figure.wide { grid-column: span 2; }
-.mocidade-gallery figure.wide img { height: 380px; }
-.mocidade-gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--card); border: 1px solid var(--line); }
-.mocidade-gallery img { width: 100%; height: 320px; object-fit: cover; transition: transform .8s ease; }
-.mocidade-gallery figure:hover img { transform: scale(1.04); }
-.mocidade-gallery figcaption { padding: 10px 14px; font-size: .8rem; color: var(--muted); }
+/* Carnival gallery */
+.carnival-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 36px 0 8px; }
+.carnival-gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.carnival-gallery figure.wide { grid-column: span 2; }
+.carnival-gallery img { width: 100%; height: 320px; object-fit: cover; transition: transform .8s ease; }
+.carnival-gallery figure.wide img { height: 420px; }
+.carnival-gallery figure:hover img { transform: scale(1.04); }
 
 /* Travel */
 .sub { margin-top: 48px; color: var(--gold); }
@@ -342,7 +338,8 @@ strong { color: #fff; }
   .calc-out { padding: 22px; }
   .kit-grid { grid-template-columns: 1fr; }
   .kit-wide { grid-column: auto; }
-  .mocidade-gallery { grid-template-columns: 1fr; }
+  .carnival-gallery { grid-template-columns: 1fr; }
+  .carnival-gallery figure.wide { grid-column: auto; }
   .lounge-wall { left: 44%; top: 12%; width: 44%; height: 50%; }
 }
 @media print {
