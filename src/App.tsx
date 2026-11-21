@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import {
   QUOTAS, DAYS, PRICE_FULL, PRICE_CAMAROTE, TOTAL_INVITES,
   SCHOOL_SHARE, CAMAROTE_SHARE, EXPERIENCE_SHARE, TOTAL_PROJECT,
@@ -153,7 +153,7 @@ function Story() {
           </p>
         </div>
         <div className="pillars">
-          <Pillar n="01" title="Private Camarote" text={`${TOTAL_INVITES} invitations across 8 quotas, Sector 9, Global Hospitality.`} />
+          <Pillar n="01" title="Private Camarote" text={`${TOTAL_INVITES} invitations in packages of 20, 40, 60 and 80, Sector 9, Global Hospitality.`} />
           <Pillar n="02" title="Samba School Tribute" text="A parade section dedicated to India, with sponsor visibility on the avenue." />
           <Pillar n="03" title="Travel Hub" text="Hotels, transfers and experiences organised for every guest coming to Rio." />
         </div>
@@ -173,39 +173,16 @@ function Pillar({ n, title, text }: { n: string; title: string; text: string }) 
 }
 
 function Mocidade2018() {
-  const refs: [string, string, string][] = [
-    ["Rio Times", "Mocidade's India parade closes the first night of the Grupo Especial, February 2018.", "https://www.riotimesonline.com/?p=232463"],
-    ["Folha Vitória", "“Mocidade faz leitura literal do enredo e atrai com efeitos”: the parade and its staging.", "https://www.folhavitoria.com.br/cultura/mocidade-faz-leitura-literal-do-enredo-e-atrai-com-efeitos/"],
-    ["AFP photo gallery", "Photos of the Mocidade reveller at sunrise after the first night, by Mauro Pimentel (AFP).", "https://www.elespectador.com/?p=3605491"],
-  ];
   return (
-    <section id="mocidade" className="section">
+    <section id="mocidade" className="section tight">
       <div className="wrap">
-        <p className="eyebrow gold">A samba school that already told India's story</p>
-        <h2>Mocidade Independente, Carnival 2018: “Namastê”.</h2>
-        <p className="lead-small">
-          In 2018 Mocidade Independente de Padre Miguel paraded on the Sapucaí with a samba-enredo that paid tribute to
-          India and Hindu mythology, under the question “What do India and Brazil have in common?”. It is a precedent for
-          the tribute proposed here.
-        </p>
-        <div className="media-grid">
-          {refs.map(([src, title, href]) => (
-            <a key={href} className="media reveal" href={href} target="_blank" rel="noreferrer">
-              <span className="media-src">{src}</span>
-              <strong>{title}</strong>
-              <span className="media-go">Open the source →</span>
-            </a>
-          ))}
-        </div>
+        <p className="eyebrow gold">Carnival in pictures</p>
         <div className="mocidade-gallery">
           <figure className="reveal"><img src="img/mocidade-2018-sunrise.jpg" alt="A Mocidade reveller performs as the sun rises after the first night of Carnival at the Sambadrome, 2018" loading="lazy" /><figcaption>Photo: AFP / Mauro Pimentel</figcaption></figure>
           <figure className="reveal delay"><img src="img/mocidade-2018-parade-1.jpg" alt="Mocidade Independente de Padre Miguel parading at the Sambadrome, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
           <figure className="reveal delay2"><img src="img/mocidade-2018-parade-2.jpg" alt="Mocidade Independente de Padre Miguel members on the avenue, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
         </div>
-        <p className="note">
-          Photos: AFP (credited above). Permission to use them on this page should be confirmed with the agency
-          before publication. Licensed or owned photos of the 2028 parade will replace them once available.
-        </p>
+        <p className="note">Photos: AFP, credited on each image. Permission to publish should be confirmed with the agency.</p>
       </div>
     </section>
   );
@@ -446,11 +423,10 @@ function LoungeBrand() {
 
 function Quotas() {
   const [sponsor, setSponsor] = useState(true);
-  const [selected, setSelected] = useState(3);
-  const q = QUOTAS.find((x) => x.id === selected) ?? QUOTAS[2];
+  const [selected, setSelected] = useState(2);
+  const q = QUOTAS.find((x) => x.id === selected) ?? QUOTAS[1];
   const perGuest = sponsor ? PRICE_FULL : PRICE_CAMAROTE;
   const total = quotaPrice(q, sponsor);
-  const totalAll = useMemo(() => QUOTAS.reduce((a, x) => a + quotaPrice(x, sponsor), 0), [sponsor]);
 
   return (
     <section id="quotas" className="section alt">
@@ -513,18 +489,11 @@ function Quotas() {
                   <td>{usd(quotaPrice(x, true))}<small>{brl(quotaPrice(x, true))}</small></td>
                 </tr>
               ))}
-              <tr className="total">
-                <td>Total</td>
-                <td colSpan={4} />
-                <td>{TOTAL_INVITES}</td>
-                <td>{usd(QUOTAS.reduce((a, x) => a + quotaPrice(x, false), 0))}<small>{brl(QUOTAS.reduce((a, x) => a + quotaPrice(x, false), 0))}</small></td>
-                <td>{usd(QUOTAS.reduce((a, x) => a + quotaPrice(x, true), 0))}<small>{brl(QUOTAS.reduce((a, x) => a + quotaPrice(x, true), 0))}</small></td>
-              </tr>
             </tbody>
           </table>
         </div>
         <p className="small muted">
-          Showing the {sponsor ? "full" : "camarote-only"} total of {usd(totalAll)} ({brl(totalAll)}) for all quotas.
+          Packages of {QUOTAS.map((x) => quotaInvites(x)).join(", ")} invitations. The project offers {TOTAL_INVITES} invitations in total.
           US$ values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1 and are converted from the BRL spreadsheet.
         </p>
       </div>

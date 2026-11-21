@@ -21,15 +21,12 @@ export type Quota = {
   days: [number, number, number, number]; // Sun, Mon, Tue, Sat (order as in spreadsheet: DOM, SEG, TER, SAB)
 };
 
+// Quota packages: each package is split equally across the four parade nights.
 export const QUOTAS: Quota[] = [
-  { id: 1, label: "Quota 1", days: [18, 18, 18, 18] },
-  { id: 2, label: "Quota 2", days: [20, 20, 20, 20] },
-  { id: 3, label: "Quota 3", days: [20, 20, 20, 20] },
-  { id: 4, label: "Quota 4", days: [20, 20, 20, 20] },
-  { id: 5, label: "Quota 5", days: [24, 24, 24, 24] },
-  { id: 6, label: "Quota 6", days: [26, 26, 26, 26] },
-  { id: 7, label: "Quota 7", days: [28, 28, 28, 28] },
-  { id: 8, label: "Quota 8", days: [44, 44, 44, 44] },
+  { id: 1, label: "Quota 20", days: [5, 5, 5, 5] },
+  { id: 2, label: "Quota 40", days: [10, 10, 10, 10] },
+  { id: 3, label: "Quota 60", days: [15, 15, 15, 15] },
+  { id: 4, label: "Quota 80", days: [20, 20, 20, 20] },
 ];
 
 export function quotaInvites(q: Quota) {
