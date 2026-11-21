@@ -48,7 +48,7 @@ export default function App() {
       <Contact />
       <footer className="footer">
         <div className="wrap">
-          <p>India on the Avenue 2028 · 80 Years of Diplomatic Relations Brazil · India (1948–2028)</p>
+          <p>India at Brazil's Carnival 2028 · 80 Years of Diplomatic Relations Brazil · India (1948–2028)</p>
           <p className="muted">
             All prices are shown in US dollars at an indicative rate of R$ {USD_RATE.toFixed(2)} per US$ 1; the final amount is fixed at the rate on the date of contract. Subject to final confirmation. Tax incentives depend on each
             company's situation; consult your advisor.
@@ -63,7 +63,7 @@ function Header() {
   return (
     <header className="topbar">
       <div className="wrap topbar-inner">
-        <a href="#top" className="brand">India on the Avenue 2028</a>
+        <a href="#top" className="brand">India at Brazil's Carnival 2028</a>
         <nav className="nav">
           {NAV.map(([id, label]) => (
             <a key={id} href={`#${id}`}>{label}</a>
@@ -81,8 +81,8 @@ function Hero() {
       <div className="hero-shade" aria-hidden="true" />
       <div className="wrap hero-grid">
         <div className="hero-text reveal">
-          <p className="project-title">India on the Avenue 2028</p>
-          <p className="project-title-hi" lang="hi">एवेन्यू पर भारत 2028</p>
+          <p className="project-title">India at Brazil's Carnival 2028</p>
+          <p className="project-title-hi" lang="hi">ब्राज़ीलियाई कार्निवल में भारत 2028</p>
           <p className="eyebrow gold">Carnival of Rio 2028 · Marquês de Sapucaí</p>
           <h1>
             Eighty years of friendship, <em>on the greatest stage on Earth.</em>
@@ -392,8 +392,12 @@ function Finale() {
   return (
     <section className="section alt finale">
       <div className="wrap">
-        <p className="eyebrow gold">The celebration</p>
-        <h2>Carnival, in colour.</h2>
+        <p className="eyebrow gold">Holi · होली · The festival of colours</p>
+        <h2>Holi meets Carnival.</h2>
+        <p className="lead-small">
+          Holi, India's festival of colours, comes to Brazil's Carnival: a magical encounter of two great cultures,
+          celebrated with colour, rhythm and joy on the Sapucaí.
+        </p>
         <div className="finale-grid">
           <figure className="reveal"><img src="img/carnival-powder.jpg" alt="A float covered in colourful powder with dancers from Brazil and India" loading="lazy" /></figure>
           <figure className="reveal delay"><img src="img/carnival-aerial.jpg" alt="Aerial view of a golden elephant float on the Sambadrome avenue" loading="lazy" /></figure>
@@ -413,7 +417,7 @@ function Invitation() {
         <p className="eyebrow gold">An invitation</p>
         <h2 className="invite-title">Two flags. One rhythm. <em>One family.</em></h2>
         <p className="invite-pt">
-          Brasil e Índia: 80 anos de irmandade, celebrados no coração do Carnaval. Venha dançar com a gente na Sapucaí em 2028.
+          Brazil and India: 80 years of brotherhood, celebrated at the heart of Carnival. Come dance with us at the Sapucaí in 2028.
         </p>
         <div className="cta-row">
           <a className="btn btn-primary" href="#quotas">Reserve your quota</a>
@@ -675,7 +679,7 @@ function Contact() {
         </ol>
         <div className="cta-row">
           {CONTACT_EMAIL ? (
-            <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=India on the Avenue 2028`}>Request a proposal</a>
+            <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=India at Brazil's Carnival 2028`}>Request a proposal</a>
           ) : (
             <p className="muted">Contact the team at {SITE}.</p>
           )}
