@@ -178,6 +178,8 @@ function Mocidade2018() {
       <div className="wrap">
         <p className="eyebrow gold">Carnival in pictures</p>
         <div className="mocidade-gallery">
+          <figure className="reveal wide"><img src="img/carnival-float-avenue.jpg" alt="A colourful samba school float with the crowd filling the Sambadrome stands at night" loading="lazy" /><figcaption>Photo: David Groves / Unsplash</figcaption></figure>
+          <figure className="reveal delay"><img src="img/carnival-dancer.jpg" alt="A smiling samba dancer on the avenue" loading="lazy" /><figcaption>Photo: David Groves / Unsplash</figcaption></figure>
           <figure className="reveal"><img src="img/mocidade-2018-sunrise.jpg" alt="A Mocidade reveller performs as the sun rises after the first night of Carnival at the Sambadrome, 2018" loading="lazy" /><figcaption>Photo: AFP / Mauro Pimentel</figcaption></figure>
           <figure className="reveal delay"><img src="img/mocidade-2018-parade-1.jpg" alt="Mocidade Independente de Padre Miguel parading at the Sambadrome, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
           <figure className="reveal delay2"><img src="img/mocidade-2018-parade-2.jpg" alt="Mocidade Independente de Padre Miguel members on the avenue, February 2018" loading="lazy" /><figcaption>Photo: AFP · Mocidade Independente, Carnival 2018</figcaption></figure>
