@@ -366,6 +366,9 @@ function Partners() {
           <div className="partner-card partner-dark reveal delay2">
             <img src="img/logo-frances.png" alt={t.organisers.frances} />
           </div>
+          <div className="partner-card reveal delay3">
+            <img src="img/logo-transporter.png" alt={t.partners.transporterAlt} />
+          </div>
         </div>
       </div>
     </section>

@@ -340,7 +340,8 @@ strong { color: #fff; }
   .stats, .themes, .features { grid-template-columns: repeat(2, 1fr); }
   .cards.four { grid-template-columns: repeat(2, 1fr); }
   .gallery.three { grid-template-columns: 1fr 1fr; }
-  .partner-grid { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr 1fr; }
+  .partner-grid .partner-card:last-child { grid-column: span 2; }
   .kit-grid { grid-template-columns: 1fr 1fr; }
   .pillars, .benefits, .cards { grid-template-columns: 1fr; }
   .calc-pick { grid-template-columns: repeat(4, 1fr); }
@@ -376,7 +377,7 @@ strong { color: #fff; }
 }
 
 /* Partners: logos only */
-.partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+.partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 36px; }
 .partner-card { display: flex; align-items: center; justify-content: center; min-height: 170px; padding: 28px 32px; background: var(--ivory); border-radius: var(--radius); }
 .partner-card img { max-height: 84px; width: auto; max-width: 100%; object-fit: contain; }
 .partner-card.partner-dark { background: var(--navy); border: 1px solid var(--line); }
@@ -390,3 +391,5 @@ strong { color: #fff; }
 .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; flex-shrink: 0; }
 .lang button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: .78rem; font-weight: 700; letter-spacing: .08em; padding: 6px 10px; border-radius: 999px; cursor: pointer; }
 .lang button.on { background: var(--gold); color: var(--navy-deep); }
+
+@media (max-width: 640px) { .partner-grid { grid-template-columns: 1fr; } .partner-grid .partner-card:last-child { grid-column: auto; } }

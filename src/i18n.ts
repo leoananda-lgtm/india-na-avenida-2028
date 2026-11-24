@@ -109,7 +109,7 @@ export const en = {
     alt: "Illustrative camarote lounge with the 80 Years logo and a partner logo on the wall",
     cap: "Illustrative example · partner logo shown for reference",
   },
-  partners: { eyebrow: "Partners and institutions", h2: "Who is already with us.", lead: "Companies and institutions already part of this project of closeness and brotherhood between Brazil and India. More partners will be added as they confirm." },
+  partners: { eyebrow: "Partners and institutions", h2: "Who is already with us.", transporterAlt: "Brummie Lines, official transporter", lead: "Companies and institutions already part of this project of closeness and brotherhood between Brazil and India. More partners will be added as they confirm." },
   finale: { eyebrow: "Holi · होली · The festival of colours", h2: "Holi meets Carnival.", lead: "Holi, India's festival of colours, comes to Brazil's Carnival: a magical encounter of two great cultures, celebrated with colour, rhythm and joy on the Sapucaí.", note: "Illustrative images.", alt1: "A float covered in colourful powder with dancers from Brazil and India", alt2: "Aerial view of a golden elephant float on the Sambadrome avenue" },
   invite: { eyebrow: "An invitation", title1: "Two flags. One rhythm.", title2: "One family.", text: "Brazil and India: 80 years of brotherhood, celebrated at the heart of Carnival. Come dance with us at the Sapucaí in 2028.", cta1: "Reserve your quota", cta2: "Plan your trip" },
   quotas: {
@@ -320,7 +320,7 @@ export const pt: typeof en = {
     alt: "Lounge ilustrativo do camarote com a logo dos 80 anos e a logo de um parceiro na parede",
     cap: "Exemplo ilustrativo · logo de parceiro apenas como referência",
   },
-  partners: { eyebrow: "Parceiros e instituições", h2: "Quem já está conosco.", lead: "Empresas e instituições que já fazem parte deste projeto de aproximação e irmandade entre Brasil e Índia. Novos parceiros serão incluídos à medida que confirmarem." },
+  partners: { eyebrow: "Parceiros e instituições", h2: "Quem já está conosco.", transporterAlt: "Brummie Lines, transportadora oficial", lead: "Empresas e instituições que já fazem parte deste projeto de aproximação e irmandade entre Brasil e Índia. Novos parceiros serão incluídos à medida que confirmarem." },
   finale: { eyebrow: "Holi · होली · O festival das cores", h2: "O Holi encontra o Carnaval.", lead: "O Holi, festival indiano das cores, chega ao Carnaval brasileiro: um encontro mágico de duas grandes culturas, celebrado com cor, ritmo e alegria na Sapucaí.", note: "Imagens ilustrativas.", alt1: "Carro coberto de pó colorido com dançarinos do Brasil e da Índia", alt2: "Vista aérea de um carro dourado com elefante na avenida do Sambódromo" },
   invite: { eyebrow: "Um convite", title1: "Duas bandeiras. Um ritmo.", title2: "Uma família.", text: "Brasil e Índia: 80 anos de irmandade, celebrados no coração do Carnaval. Venha dançar com a gente na Sapucaí em 2028.", cta1: "Reserve sua cota", cta2: "Planeje sua viagem" },
   quotas: {
