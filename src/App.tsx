@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { Fragment, createContext, useContext, useEffect, useState } from "react";
 import {
   QUOTAS, DAYS, PRICE_FULL, PRICE_CAMAROTE, TOTAL_INVITES,
   SCHOOL_SHARE, CAMAROTE_SHARE, EXPERIENCE_SHARE, TOTAL_PROJECT,
@@ -181,6 +181,20 @@ function Organisers() {
   );
 }
 
+function BoldFrances({ text }: { text: string }) {
+  const parts = text.split("Experiences do Francês");
+  return (
+    <>
+      {parts.map((p, i) => (
+        <Fragment key={i}>
+          {p}
+          {i < parts.length - 1 && <strong>Experiences do Francês</strong>}
+        </Fragment>
+      ))}
+    </>
+  );
+}
+
 function Story() {
   const t = useT();
   return (
@@ -189,13 +203,13 @@ function Story() {
         <p className="eyebrow gold">{t.story.eyebrow}</p>
         <h2>{t.story.h2}</h2>
         <div className="two-col">
-          <p>{t.story.p1}</p>
+          <p><BoldFrances text={t.story.p1} /></p>
           <p>
             {t.story.p2[0]} <strong>{t.story.p2[1]}</strong> {t.story.p2[2]} <strong>{t.story.p2[3]}</strong> {t.story.p2[4]}
           </p>
         </div>
         <p className="lead-small">{t.story.skip1}</p>
-        <p className="lead-small">{t.story.skip2}</p>
+        <p className="lead-small"><BoldFrances text={t.story.skip2} /></p>
         <div className="family reveal proposal">
           <p className="eyebrow gold">{t.story.proposalEyebrow}</p>
           <p>{t.story.proposal1}</p>
