@@ -13,7 +13,7 @@ export const PRICE_FULL = TOTAL_PROJECT / TOTAL_INVITES;                       /
 export const PRICE_SPONSOR = SCHOOL_SHARE / TOTAL_INVITES;                     //  9,812.50
 export const PRICE_CAMAROTE = (EXPERIENCE_SHARE + CAMAROTE_SHARE) / TOTAL_INVITES; // 10,344.375
 
-export const DAYS = ["Sun 27 Feb", "Mon 28 Feb", "Tue 29 Feb", "Sat 26 Feb"] as const;
+export const DAYS = ["Sun 27 Feb", "Mon 28 Feb", "Tue 29 Feb", "Sat 4 Mar"] as const;
 
 export type Quota = {
   id: number;
