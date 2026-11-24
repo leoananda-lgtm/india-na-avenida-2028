@@ -194,6 +194,8 @@ function Story() {
             {t.story.p2[0]} <strong>{t.story.p2[1]}</strong> {t.story.p2[2]} <strong>{t.story.p2[3]}</strong> {t.story.p2[4]}
           </p>
         </div>
+        <p className="lead-small">{t.story.skip1}</p>
+        <p className="lead-small">{t.story.skip2}</p>
         <div className="family reveal proposal">
           <p className="eyebrow gold">{t.story.proposalEyebrow}</p>
           <p>{t.story.proposal1}</p>
@@ -202,6 +204,11 @@ function Story() {
         <div className="pillars">
           {t.story.pillars.map((p, i) => (
             <Pillar key={p.title} n={`0${i + 1}`} title={p.title} text={p.text.replace("{n}", String(TOTAL_INVITES))} />
+          ))}
+        </div>
+        <div className="pillars">
+          {t.story.skipPillars.map((p, i) => (
+            <Pillar key={p.title} n={`0${i + 1}`} title={p.title} text={p.text} />
           ))}
         </div>
       </div>
@@ -232,6 +239,12 @@ function Carnival() {
             <Stat key={s.big} big={s.big} label={s.label} note={s.note} />
           ))}
         </div>
+        <p className="eyebrow gold">{t.carnival.stageEyebrow}</p>
+        <div className="stats">
+          {t.carnival.stageItems.map((s) => (
+            <Stat key={s.big} big={s.big} label={s.label} note={s.note} />
+          ))}
+        </div>
         <p className="quote">{t.carnival.quote}</p>
         <div className="gallery">
           <figure className="reveal"><img src="img/camarote-party.jpg" alt="Guests celebrating in the camarote during a samba performance" loading="lazy" /></figure>
@@ -258,6 +271,7 @@ function Mocidade2018() {
     <section id="mocidade" className="section tight">
       <div className="wrap">
         <p className="eyebrow gold">{t.carnival.picsEyebrow}</p>
+        <p className="lead-small">{t.carnival.picsLead}</p>
         <div className="carnival-gallery">
           <figure className="reveal"><img src="img/carnival-1.jpg" alt={t.carnival.alt1} loading="lazy" /></figure>
           <figure className="reveal delay"><img src="img/carnival-2.jpg" alt={t.carnival.alt2} loading="lazy" /></figure>
@@ -280,6 +294,7 @@ function IndiaSection() {
           <p className="family-motto">{t.india.familyMotto}</p>
           <p>{t.india.family}</p>
         </div>
+        <p className="lead-small">{t.india.proposalLead}</p>
         <ol className="timeline">
           {t.india.timeline.map(([y, x]) => (
             <li key={y} className="reveal">
@@ -313,6 +328,7 @@ function Camarote() {
       <div className="wrap">
         <p className="eyebrow gold">{t.camarote.eyebrow}</p>
         <h2>{t.camarote.h2}</h2>
+        <p className="lead-small">{t.camarote.lead}</p>
         <div className="gallery pair">
           <figure className="reveal"><img src="img/camarote-buffet.jpg" alt={t.camarote.alts[0]} loading="lazy" /></figure>
           <figure className="reveal delay"><img src="img/camarote-lounge.jpg" alt={t.camarote.alts[1]} loading="lazy" /></figure>
@@ -351,6 +367,7 @@ function GuestKit() {
         <p className="eyebrow gold">{t.kit.eyebrow}</p>
         <h2>{t.kit.h2}</h2>
         <p className="lead-small kit-lead">{t.kit.lead}</p>
+        <p className="lead-small">{t.kit.costume}</p>
         <div className="kit-grid">
           {imgs.map(([src, cls], i) => (
             <figure key={src} className={`reveal ${cls}`}>
@@ -372,6 +389,7 @@ function LoungeBrand() {
       <div className="wrap">
         <p className="eyebrow gold">{t.lounge.eyebrow}</p>
         <h2>{t.lounge.h2}</h2>
+        <p className="lead-small">{t.lounge.p0}</p>
         <p className="lead-small">{t.lounge.p1}</p>
         <p className="lead-small">{t.lounge.p2}</p>
         <figure className="lounge-example reveal">
@@ -570,6 +588,14 @@ function Sponsorship() {
         <div className="family reveal">
           <p className="eyebrow gold">{t.sponsorship.whereEyebrow}</p>
           <p><strong>{t.sponsorship.where}</strong> {t.sponsorship.whereText}</p>
+        </div>
+        <div className="family reveal">
+          <p>{t.sponsorship.budget}</p>
+        </div>
+        <div className="benefits">
+          {t.sponsorship.items.map(([h, p], i) => (
+            <div key={h} className={`benefit reveal ${i === 1 ? "delay" : i === 2 ? "delay2" : ""}`}><h4>{h}</h4><p>{p}</p></div>
+          ))}
         </div>
         <div className="benefits">
           {t.sponsorship.benefits.map(([h, p], i) => (
