@@ -42,6 +42,7 @@ export default function App() {
       <Camarote />
       <GuestKit />
       <LoungeBrand />
+      <Legacy />
       <Quotas />
       <Sponsorship />
       <Activations />
@@ -367,6 +368,7 @@ function Partners() {
             <img src="img/logo-frances.png" alt={t.organisers.frances} />
           </div>
           <div className="partner-card reveal delay3">
+            <span className="partner-tag">{t.partners.transporterTag}</span>
             <img src="img/logo-transporter.png" alt={t.partners.transporterAlt} />
           </div>
         </div>
@@ -406,6 +408,39 @@ function Invitation() {
         <div className="cta-row">
           <a className="btn btn-primary" href="#quotas">{t.invite.cta1}</a>
           <a className="btn btn-ghost" href="#travel">{t.invite.cta2}</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Legacy() {
+  const t = useT();
+  return (
+    <section id="legacy" className="section legacy">
+      <div className="wrap legacy-grid">
+        <figure className="legacy-cover reveal">
+          <img src="img/livro-comemorativo.jpg" alt={t.legacy.alt} loading="lazy" />
+          <span className="legacy-seal">
+            <img src="img/logo-80-icon.png" alt="" aria-hidden="true" />
+            <span>{t.legacy.seal}</span>
+          </span>
+        </figure>
+        <div className="legacy-text reveal delay">
+          <p className="eyebrow gold">{t.legacy.eyebrow}</p>
+          <h2>{t.legacy.h2}</h2>
+          <p className="legacy-sub">{t.legacy.subtitle}</p>
+          <p>{t.legacy.p1}</p>
+          <p>{t.legacy.p2}</p>
+          <p>{t.legacy.p3}</p>
+          <h4 className="legacy-h4">{t.legacy.sponsorTitle}</h4>
+          <p>{t.legacy.sponsorLead}</p>
+          <p className="muted">{t.legacy.recognitionLead}</p>
+          <ul className="legacy-list">
+            {t.legacy.recognition.map((x) => <li key={x}>{x}</li>)}
+          </ul>
+          <p className="legacy-tagline"><strong>{t.legacy.tagline}</strong><br />{t.legacy.taglineText}</p>
+          <a className="btn btn-primary" href="#quotas">{t.legacy.cta}</a>
         </div>
       </div>
     </section>

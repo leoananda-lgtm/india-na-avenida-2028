@@ -393,3 +393,25 @@ strong { color: #fff; }
 .lang button.on { background: var(--gold); color: var(--navy-deep); }
 
 @media (max-width: 640px) { .partner-grid { grid-template-columns: 1fr; } .partner-grid .partner-card:last-child { grid-column: auto; } }
+
+/* Commemorative book (legacy) */
+.legacy { background: radial-gradient(900px 500px at 100% 0%, rgba(244,185,22,.14), transparent 60%), var(--navy-deep); }
+.legacy-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.legacy-cover { position: relative; margin: 0; }
+.legacy-cover img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 30px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(244,185,22,.35); }
+.legacy-seal { position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 10px; background: rgba(4,15,38,.85); border: 1px solid var(--gold); border-radius: 999px; padding: 8px 14px 8px 8px; font-size: .78rem; font-weight: 700; letter-spacing: .08em; color: #fff; }
+.legacy-seal img { width: 36px; height: 36px; object-fit: contain; }
+.legacy-sub { font-family: var(--serif); font-style: italic; font-size: 1.3rem; color: var(--gold); margin-top: -6px; }
+.legacy-text p { color: #d6def0; }
+.legacy-h4 { margin-top: 28px; color: #fff; }
+.legacy-list { list-style: none; padding: 0; margin: 12px 0 24px; }
+.legacy-list li { position: relative; padding: 6px 0 6px 22px; color: #d6def0; font-size: .95rem; }
+.legacy-list li::before { content: ""; position: absolute; left: 0; top: 15px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+.legacy-tagline { border-left: 3px solid var(--gold); padding-left: 16px; margin: 8px 0 24px; }
+.legacy-tagline strong { color: #fff; }
+@media (max-width: 960px) { .legacy-grid { grid-template-columns: 1fr; } }
+
+/* Partners: uniform logo size and transporter tag */
+.partner-card { flex-direction: column; gap: 12px; }
+.partner-card img { width: 72%; max-width: 260px; height: auto; max-height: 70px; object-fit: contain; }
+.partner-tag { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); background: var(--gold); border-radius: 999px; padding: 5px 12px; }
