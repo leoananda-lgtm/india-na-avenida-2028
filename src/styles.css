@@ -121,7 +121,7 @@ strong { color: #fff; }
 
 /* Quotes on the first page */
 .quotes { background: var(--bg); padding: 56px 0 24px; }
-.quote-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .quote-card {
   margin: 0; padding: 28px 24px; border-radius: var(--radius);
   background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--gold);
@@ -415,3 +415,18 @@ strong { color: #fff; }
 .partner-card { flex-direction: column; gap: 12px; }
 .partner-card img { width: 72%; max-width: 260px; height: auto; max-height: 70px; object-fit: contain; }
 .partner-tag { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); background: var(--gold); border-radius: 999px; padding: 5px 12px; }
+
+/* Hero countdown and live line */
+.hero-live { color: #fff; font-weight: 600; margin: 4px 0 18px; }
+.countdown { margin: 18px 0 0; }
+.countdown-title { font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.countdown-grid { display: grid; grid-template-columns: repeat(4, 84px); gap: 10px; }
+.countdown-item { background: rgba(255,255,255,.06); border: 1px solid var(--line); border-radius: 14px; padding: 12px 6px; text-align: center; }
+.countdown-item span { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; }
+.countdown-item small { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* India: colours, music, business blocks */
+.blocks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 0 40px; }
+.block { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 24px; }
+.block p { color: var(--muted); margin: 0; }
+@media (max-width: 960px) { .blocks { grid-template-columns: 1fr; } .countdown-grid { grid-template-columns: repeat(4, 1fr); } }

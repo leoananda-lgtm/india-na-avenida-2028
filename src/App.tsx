@@ -87,6 +87,33 @@ function Header() {
   );
 }
 
+function Countdown() {
+  const t = useT();
+  const target = new Date("2028-02-25T00:00:00-03:00").getTime();
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const diff = Math.max(0, target - now);
+  const parts = [
+    [Math.floor(diff / 86400000), t.hero.countdown.days],
+    [Math.floor((diff / 3600000) % 24), t.hero.countdown.hours],
+    [Math.floor((diff / 60000) % 60), t.hero.countdown.minutes],
+    [Math.floor((diff / 1000) % 60), t.hero.countdown.seconds],
+  ] as [number, string][];
+  return (
+    <div className="countdown" aria-label={t.hero.countdown.title}>
+      <p className="countdown-title">{t.hero.countdown.title}</p>
+      <div className="countdown-grid">
+        {parts.map(([n, label]) => (
+          <div key={label} className="countdown-item"><span>{n}</span><small>{label}</small></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   const t = useT();
   return (
@@ -102,6 +129,8 @@ function Hero() {
             {t.hero.h1a} <em>{t.hero.h1b}</em>
           </h1>
           <p className="lead">{t.hero.lead}</p>
+          <p className="hero-live">{t.hero.live}</p>
+          <Countdown />
           <div className="cta-row">
             <a className="btn btn-primary" href="#quotas">{t.hero.cta1}</a>
             <a className="btn btn-ghost" href="#sponsor">{t.hero.cta2}</a>
@@ -259,6 +288,11 @@ function IndiaSection() {
             </li>
           ))}
         </ol>
+        <div className="blocks">
+          {t.india.blocks.map(([h, d]) => (
+            <div key={h} className="block reveal"><h4>{h}</h4><p>{d}</p></div>
+          ))}
+        </div>
         <div className="themes">
           {t.india.themes.map(([h, d]) => (
             <div key={h} className="theme reveal">
@@ -569,6 +603,10 @@ function Activations() {
         <h4 className="sub">{t.activations.parade}</h4>
         <div className="chips-static">
           {t.activations.paradeItems.map((x) => <span key={x} className="tag">{x}</span>)}
+        </div>
+        <h4 className="sub">{t.activations.moreTitle}</h4>
+        <div className="chips-static">
+          {t.activations.more.map((x) => <span key={x} className="tag">{x}</span>)}
         </div>
         <p className="note">{t.activations.note}</p>
       </div>

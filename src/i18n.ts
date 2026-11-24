@@ -16,6 +16,8 @@ export const en = {
     cta1: "See the quotas",
     cta2: "Sponsor the tribute",
     logoAlt: "80 Years of Diplomatic Relations Brazil India, 1948–2028",
+    live: "Live · the Samba School parades begin on Friday, 25 February 2028.",
+    countdown: { title: "Countdown to Carnival 2028", days: "Days", hours: "Hours", minutes: "Minutes", seconds: "Seconds" },
     caption: "Brazil · India · 1948 – 2028",
   },
   quotes: [
@@ -23,6 +25,8 @@ export const en = {
     { text: "More than 6.4 million revellers in Rio de Janeiro alone.", source: "Government of Brazil" },
     { text: "Rio de Janeiro breaks tourist records during Carnival 2025 and generates US$ 1.2 billion.", source: "Rio de Janeiro State Tourism" },
     { text: "Rio's Carnival is the greatest stage in the world, and the Sapucaí is its most coveted showcase.", source: "Marquês de Sapucaí" },
+    { text: "The Rio de Janeiro Carnival is the biggest party on the planet.", source: "CNN" },
+    { text: "Brazil celebrates its return to full-scale Carnival festivities.", source: "Al Jazeera" },
   ],
   organisers: { eyebrow: "Organised by", camara: "India Brazil Chamber of Commerce, since 2003", frances: "Experiences do Francês" },
   story: {
@@ -70,6 +74,13 @@ export const en = {
       ["1948", "Diplomatic relations are established between Brazil and India."],
       ["2009", "Caminho das Índias brings Indian culture into millions of Brazilian homes."],
       ["21st c.", "Technology and biotechnology: research, innovation and investment between the two countries."],
+      ["2026", "80th-anniversary preparations begin; project concept takes shape."],
+      ["2028", "India parades at the Sapucaí, 27 February to 4 March."],
+    ] as [string, string][],
+    blocks: [
+      ["Colors", "A float and costumes inspired by Indian festivals and textiles."],
+      ["Music", "Indian percussion meeting the baterias of Rio's samba schools."],
+      ["Business", "Trade mission alongside the parades, hosted by the Chamber."],
     ] as [string, string][],
     themes: [
       ["Roots & discovery", "Cabral's voyage, spices, mango, jackfruit and coconut."],
@@ -110,7 +121,7 @@ export const en = {
     cap: "Illustrative example · partner logo shown for reference",
   },
   partners: { eyebrow: "Partners and institutions", h2: "Who is already with us.", transporterAlt: "Brummie Lines, official transporter", transporterTag: "Official transporter", lead: "Companies and institutions already part of this project of closeness and brotherhood between Brazil and India. More partners will be added as they confirm." },
-  finale: { eyebrow: "Holi · होली · The festival of colours", h2: "Holi meets Carnival.", lead: "Holi, India's festival of colours, comes to Brazil's Carnival: a magical encounter of two great cultures, celebrated with colour, rhythm and joy on the Sapucaí.", note: "Illustrative images.", alt1: "A float covered in colourful powder with dancers from Brazil and India", alt2: "Aerial view of a golden elephant float on the Sambadrome avenue" },
+  finale: { eyebrow: "Holi · होली · The festival of colours", h2: "Holi meets Carnival.", lead: "Holi, India's festival of colours, comes to Brazil's Carnival: a magical encounter of two great cultures, celebrated with colour, rhythm and joy on the Sapucaí. The finale party joins the two countries in one celebration: Indian colours, Brazilian rhythm.", note: "Illustrative images.", alt1: "A float covered in colourful powder with dancers from Brazil and India", alt2: "Aerial view of a golden elephant float on the Sambadrome avenue" },
   invite: { eyebrow: "An invitation", title1: "Two flags. One rhythm.", title2: "One family.", text: "Brazil and India: 80 years of brotherhood, celebrated at the heart of Carnival. Come dance with us at the Sapucaí in 2028.", cta1: "Reserve your quota", cta2: "Plan your trip" },
   legacy: {
     eyebrow: "Commemorative book · 80 years",
@@ -177,6 +188,8 @@ export const en = {
     guestItems: ["Sampling at check-in", "Brand activation at check-in", "Guest bag", "Brand on the guest's shirt", "Vehicle wraps for guest transport"],
     camaroteItems: ["Product advertising", "LED panel", "Advertising", "Wraps", "Influencers", "Wrapped column", "Beauty area", "Showcases", "Corner", "Boutiques"],
     paradeItems: ["Shirts", "Floats"],
+    moreTitle: "More activations",
+    more: ["Float and costumes branding", "Hospitality lounge naming", "Business-mission meetings", "Commemorative Book", "Press and media relations"],
     note: "Pricing for each activation is available on request.",
   },
   media: {
@@ -250,6 +263,8 @@ export const pt: typeof en = {
     cta1: "Ver as cotas",
     cta2: "Patrocinar o tributo",
     logoAlt: "80 Anos de Relações Diplomáticas Brasil Índia, 1948–2028",
+    live: "Ao vivo · os desfiles das Escolas de Samba começam na sexta-feira, 25 de fevereiro de 2028.",
+    countdown: { title: "Contagem regressiva para o Carnaval 2028", days: "Dias", hours: "Horas", minutes: "Minutos", seconds: "Segundos" },
     caption: "Brasil · Índia · 1948 – 2028",
   },
   quotes: [
@@ -257,6 +272,8 @@ export const pt: typeof en = {
     { text: "Mais de 6,4 milhões de foliões só no Rio de Janeiro.", source: "Governo do Brasil" },
     { text: "O Rio de Janeiro bate recordes turísticos no Carnaval de 2025 e movimenta US$ 1,2 bilhão.", source: "Turismo do Estado do Rio de Janeiro" },
     { text: "O Carnaval do Rio é o maior palco do mundo, e a Sapucaí é sua vitrine mais desejada.", source: "Marquês de Sapucaí" },
+    { text: "O Carnaval do Rio de Janeiro é a maior festa do planeta.", source: "CNN" },
+    { text: "O Brasil celebra o retorno do Carnaval em escala total.", source: "Al Jazeera" },
   ],
   organisers: { eyebrow: "Organizado por", camara: "Câmara de Comércio Índia-Brasil, desde 2003", frances: "Experiences do Francês" },
   story: {
@@ -304,6 +321,13 @@ export const pt: typeof en = {
       ["1948", "São estabelecidas as relações diplomáticas entre Brasil e Índia."],
       ["2009", "Caminho das Índias leva a cultura indiana para milhões de lares brasileiros."],
       ["Século XXI", "Tecnologia e biotecnologia: pesquisa, inovação e investimento entre os dois países."],
+      ["2026", "Início dos preparativos do 80º aniversário; o conceito do projeto ganha forma."],
+      ["2028", "A Índia desfila na Sapucaí, de 27 de fevereiro a 4 de março."],
+    ] as [string, string][],
+    blocks: [
+      ["Cores", "Um carro alegórico e fantasias inspirados em festivais e tecidos indianos."],
+      ["Música", "Percussão indiana encontrando as baterias das escolas de samba do Rio."],
+      ["Negócios", "Missão comercial junto aos desfiles, organizada pela Câmara."],
     ] as [string, string][],
     themes: [
       ["Raízes e descoberta", "A viagem de Cabral, especiarias, manga, jaca e coco."],
@@ -344,7 +368,7 @@ export const pt: typeof en = {
     cap: "Exemplo ilustrativo · logo de parceiro apenas como referência",
   },
   partners: { eyebrow: "Parceiros e instituições", h2: "Quem já está conosco.", transporterAlt: "Brummie Lines, transportadora oficial", transporterTag: "Transportadora oficial", lead: "Empresas e instituições que já fazem parte deste projeto de aproximação e irmandade entre Brasil e Índia. Novos parceiros serão incluídos à medida que confirmarem." },
-  finale: { eyebrow: "Holi · होली · O festival das cores", h2: "O Holi encontra o Carnaval.", lead: "O Holi, festival indiano das cores, chega ao Carnaval brasileiro: um encontro mágico de duas grandes culturas, celebrado com cor, ritmo e alegria na Sapucaí.", note: "Imagens ilustrativas.", alt1: "Carro coberto de pó colorido com dançarinos do Brasil e da Índia", alt2: "Vista aérea de um carro dourado com elefante na avenida do Sambódromo" },
+  finale: { eyebrow: "Holi · होली · O festival das cores", h2: "O Holi encontra o Carnaval.", lead: "O Holi, festival indiano das cores, chega ao Carnaval brasileiro: um encontro mágico de duas grandes culturas, celebrado com cor, ritmo e alegria na Sapucaí. A festa final une os dois países em uma só celebração: cores indianas, ritmo brasileiro.", note: "Imagens ilustrativas.", alt1: "Carro coberto de pó colorido com dançarinos do Brasil e da Índia", alt2: "Vista aérea de um carro dourado com elefante na avenida do Sambódromo" },
   invite: { eyebrow: "Um convite", title1: "Duas bandeiras. Um ritmo.", title2: "Uma família.", text: "Brasil e Índia: 80 anos de irmandade, celebrados no coração do Carnaval. Venha dançar com a gente na Sapucaí em 2028.", cta1: "Reserve sua cota", cta2: "Planeje sua viagem" },
   legacy: {
     eyebrow: "Livro comemorativo · 80 anos",
@@ -411,6 +435,8 @@ export const pt: typeof en = {
     guestItems: ["Sampling no credenciamento", "Ativação de marca no credenciamento", "Sacola do convidado", "Marca na camisa do convidado", "Adesivação das vans de transporte dos convidados"],
     camaroteItems: ["Publicidade em produtos", "Painel de LED", "Publicidade", "Adesivação", "Influenciadores", "Coluna envelopada", "Área da beleza", "Vitrines", "Corner", "Boutiques"],
     paradeItems: ["Camisas", "Alegorias"],
+    moreTitle: "Mais ativações",
+    more: ["Marca em alegorias e fantasias", "Naming do lounge de hospitalidade", "Reuniões de missão de negócios", "Livro comemorativo", "Relações com a imprensa e a mídia"],
     note: "O valor de cada ativação está disponível sob consulta.",
   },
   media: {
