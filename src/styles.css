@@ -385,3 +385,8 @@ strong { color: #fff; }
 .finale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
 .finale-grid figure { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
 .finale-grid img { width: 100%; height: 360px; object-fit: cover; }
+
+/* Language switch */
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; flex-shrink: 0; }
+.lang button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: .78rem; font-weight: 700; letter-spacing: .08em; padding: 6px 10px; border-radius: 999px; cursor: pointer; }
+.lang button.on { background: var(--gold); color: var(--navy-deep); }
