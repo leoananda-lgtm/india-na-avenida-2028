@@ -34,7 +34,7 @@ export const en = {
     h2: "A bridge between two cultures and two great economies.",
     p1: "India at the Rio de Janeiro Carnival (Brazil) is a project by Experiences do Francês, run together with the India Brazil Chamber of Commerce, honouring India alongside a samba school from Rio's Special Group.",
     skip1: "For more than a century, Rio de Janeiro's Carnival has been the world's largest celebration — two million people per day on the streets, and millions more watching the samba schools parade at the Sapucaí.",
-    skip2: "In 2028, for the first time, India will have an official presence at the parade. India at the Rio de Janeiro Carnival (Brazil) is a project built by the India-Brazil Chamber of Commerce, honoring 80 years of diplomatic relations between the two countries and taking India's colours, music and business community to the Avenue.",
+    skip2: "In 2028, for the first time, India will have an official presence at the parade. India at the Rio de Janeiro Carnival (Brazil) is a project by Experiences do Francês, run together with the India Brazil Chamber of Commerce, honouring 80 years of diplomatic relations between the two countries and taking India's colours, music and business community to the Avenue.",
     skipPillars: [
       { title: "Culture", text: "An authentic Indian presence at the Sapucaí — costumes, music and choreography designed with Brazilian samba schools." },
       { title: "Business", text: "A business delegation and premium hospitality platform connecting Indian and Brazilian companies." },
@@ -314,7 +314,7 @@ export const pt: typeof en = {
     h2: "Uma ponte entre duas culturas e duas grandes economias.",
     p1: "Índia no Carnaval do Rio de Janeiro (Brasil) é um projeto da Experiences do Francês, conduzido junto à Câmara de Comércio Índia-Brasil, homenageando a Índia junto a uma escola de samba do Grupo Especial do Rio de Janeiro.",
     skip1: "Durante mais de um século, o Carnaval do Rio de Janeiro é a maior celebração do mundo — dois milhões de pessoas por dia nas ruas, e milhões a mais assistindo aos desfiles das escolas de samba na Sapucaí.",
-    skip2: "Em 2028, pela primeira vez, a Índia terá uma presença oficial no desfile. Índia no Carnaval do Rio de Janeiro (Brasil) é um projeto construído pela Câmara de Comércio Índia-Brasil, que homenageia 80 anos de relações diplomáticas entre os dois países e leva as cores, a música e a comunidade empresarial indiana para a avenida.",
+    skip2: "Em 2028, pela primeira vez, a Índia terá uma presença oficial no desfile. Índia no Carnaval do Rio de Janeiro (Brasil) é um projeto da Experiences do Francês, conduzido junto à Câmara de Comércio Índia-Brasil, que homenageia 80 anos de relações diplomáticas entre os dois países e leva as cores, a música e a comunidade empresarial indiana para a avenida.",
     skipPillars: [
       { title: "Cultura", text: "Uma presença indiana autêntica no Sapucaí — fantasias, música e coreografias desenhadas com escolas de samba brasileiras." },
       { title: "Negócios", text: "Uma delegação empresarial e uma plataforma de hospitalidade premium conectando empresas indianas e brasileiras." },
