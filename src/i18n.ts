@@ -43,7 +43,7 @@ export const en = {
   carnival: {
     eyebrow: "The greatest show on Earth",
     h2: "Carnival is Brazil's stage for culture, music and sponsorship.",
-    nights: "6 parade nights in total (Access and Special Groups), from Friday 25 February to Saturday 4 March 2028.",
+    nights: "Carnival 2028: 6 parade nights in total (Access and Special Groups), from 25 February to 4 March. The India–Brazil camarote hosts 4 of these nights.",
     stats: [
       { big: "US$ 1.2 bn", label: "moved in the Rio economy during Carnival 2025", note: "Rio de Janeiro state tourism" },
       { big: "6.4 mi", label: "revellers in Rio de Janeiro alone", note: "Government of Brazil" },
@@ -221,7 +221,7 @@ export const en = {
     calEyebrow: "Carnival 2028 calendar",
     calLive: "Live:",
     calLiveText: "the Samba School parades begin on Friday, 25 February 2028.",
-    calText: "Sunday 27 February to Saturday 4 March: 4 nights of Special Group parades, including the Champions' Parade on Saturday 4 March.",
+    calText: "The India–Brazil camarote operates on 4 parade nights: Saturday 26, Sunday 27, Monday 28 and Tuesday 29 February. Special Group parades run until the Champions' Parade on Saturday 4 March.",
   },
   contact: {
     eyebrow: "Next steps",
@@ -277,7 +277,7 @@ export const pt: typeof en = {
   carnival: {
     eyebrow: "O maior espetáculo da Terra",
     h2: "O Carnaval é o palco do Brasil para cultura, música e patrocínio.",
-    nights: "6 noites de desfile no total (Grupos de Acesso e Especial), de sexta, 25 de fevereiro, a sábado, 4 de março de 2028.",
+    nights: "Carnaval 2028: 6 noites de desfile no total (Grupos de Acesso e Especial), de 25 de fevereiro a 4 de março. O camarote Índia-Brasil funciona em 4 dessas noites.",
     stats: [
       { big: "US$ 1,2 bi", label: "movimentados na economia do Rio durante o Carnaval de 2025", note: "Turismo do Estado do Rio de Janeiro" },
       { big: "6,4 mi", label: "foliões só no Rio de Janeiro", note: "Governo do Brasil" },
@@ -455,7 +455,7 @@ export const pt: typeof en = {
     calEyebrow: "Calendário do Carnaval 2028",
     calLive: "Ao vivo:",
     calLiveText: "os desfiles das Escolas de Samba começam na sexta-feira, 25 de fevereiro de 2028.",
-    calText: "Domingo, 27 de fevereiro, a sábado, 4 de março: 4 noites de desfiles do Grupo Especial, incluindo o Desfile das Campeãs no sábado, 4 de março.",
+    calText: "O camarote Índia-Brasil funciona em 4 noites de desfile: sábado 26, domingo 27, segunda 28 e terça 29 de fevereiro. Os desfiles do Grupo Especial seguem até o Desfile das Campeãs, no sábado, 4 de março.",
   },
   contact: {
     eyebrow: "Próximos passos",
