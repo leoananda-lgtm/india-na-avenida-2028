@@ -23,9 +23,9 @@ export type Quota = {
 
 // Quota packages: each package is split equally across the four parade nights.
 export const QUOTAS: Quota[] = [
-  { id: 1, label: "Quota 20", days: [5, 5, 5, 5] },
+  { id: 1, label: "Quota 24", days: [6, 6, 6, 6] },
   { id: 2, label: "Quota 40", days: [10, 10, 10, 10] },
-  { id: 3, label: "Quota 60", days: [15, 15, 15, 15] },
+  { id: 3, label: "Quota 64", days: [16, 16, 16, 16] },
   { id: 4, label: "Quota 80", days: [20, 20, 20, 20] },
 ];
 

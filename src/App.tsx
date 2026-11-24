@@ -48,7 +48,7 @@ export default function App() {
       <Contact />
       <footer className="footer">
         <div className="wrap">
-          <p>India at Brazil's Carnival 2028 · 80 Years of Diplomatic Relations Brazil · India (1948–2028)</p>
+          <p>India at the Rio de Janeiro Carnival - Brazil 2028 · 80 Years of Diplomatic Relations Brazil · India (1948–2028)</p>
           <p className="muted">
             All prices are shown in US dollars at an indicative rate of R$ {USD_RATE.toFixed(2)} per US$ 1; the final amount is fixed at the rate on the date of contract. Subject to final confirmation. Tax incentives depend on each
             company's situation; consult your advisor.
@@ -63,7 +63,7 @@ function Header() {
   return (
     <header className="topbar">
       <div className="wrap topbar-inner">
-        <a href="#top" className="brand">India at Brazil's Carnival 2028</a>
+        <a href="#top" className="brand">India at the Rio de Janeiro Carnival - Brazil 2028</a>
         <nav className="nav">
           {NAV.map(([id, label]) => (
             <a key={id} href={`#${id}`}>{label}</a>
@@ -81,8 +81,8 @@ function Hero() {
       <div className="hero-shade" aria-hidden="true" />
       <div className="wrap hero-grid">
         <div className="hero-text reveal">
-          <p className="project-title">India at Brazil's Carnival 2028</p>
-          <p className="project-title-hi" lang="hi">ब्राज़ीलियाई कार्निवल में भारत 2028</p>
+          <p className="project-title">India at the Rio de Janeiro Carnival - Brazil 2028</p>
+          <p className="project-title-hi" lang="hi">रियो डी जनेरो कार्निवल में भारत - ब्राज़ील 2028</p>
           <p className="eyebrow gold">Carnival of Rio 2028 · Marquês de Sapucaí</p>
           <h1>
             Eighty years of friendship, <em>on the greatest stage on Earth.</em>
@@ -147,8 +147,8 @@ function Story() {
         <h2>A bridge between two cultures and two great economies.</h2>
         <div className="two-col">
           <p>
-            In 2028, Brazil and India complete 80 years of diplomatic relations. Two products celebrate the
-            milestone on the Sapucaí, the most visible stage of Brazilian culture.
+            India at the Rio de Janeiro Carnival (Brazil) is a project by Experiences do Francês, run together with the
+            India Brazil Chamber of Commerce, honouring India alongside a samba school from Rio's Special Group.
           </p>
           <p>
             The <strong>Private Camarote</strong> brings guests to Sector 9 of the avenue for the parade nights,
@@ -157,8 +157,13 @@ function Story() {
             Holi, Diwali and the gems of Jaipur.
           </p>
         </div>
+        <div className="family reveal proposal">
+          <p className="eyebrow gold">The proposal</p>
+          <p>In 2028, India parades on the Sapucaí between 27 February and 4 March.</p>
+          <p><strong>Music:</strong> meeting the percussion section (bateria) of the Samba School.</p>
+        </div>
         <div className="pillars">
-          <Pillar n="01" title="Private Camarote" text={`${TOTAL_INVITES} invitations in packages of 20, 40, 60 and 80, Sector 9, Global Hospitality.`} />
+          <Pillar n="01" title="Private Camarote" text={`${TOTAL_INVITES} invitations in packages of 24, 40, 64 and 80, Sector 9, Global Hospitality.`} />
           <Pillar n="02" title="Samba School Tribute" text="A parade section dedicated to India, with sponsor visibility on the avenue." />
           <Pillar n="03" title="Travel Hub" text="Hotels, transfers and experiences organised for every guest coming to Rio." />
         </div>
@@ -199,6 +204,7 @@ function Carnival() {
       <div className="wrap">
         <p className="eyebrow gold">The greatest show on Earth</p>
         <h2>Carnival is Brazil's stage for culture, music and sponsorship.</h2>
+        <p className="lead-small"><strong>6 parade nights</strong>, from Friday 25 February to Saturday 4 March 2028.</p>
         <div className="stats">
           <Stat big="US$ 1.2 bn" label="moved in the Rio economy during Carnival 2025" note="Rio de Janeiro state tourism" />
           <Stat big="6.4 mi" label="revellers in Rio de Janeiro alone" note="Government of Brazil" />
@@ -347,6 +353,9 @@ function LoungeBrand() {
         <p className="eyebrow gold">Your brand in the lounge</p>
         <h2>See how your brand can look on the camarote wall.</h2>
         <p className="lead-small">
+          The final design of the India–Brazil private camarote is developed according to the packages acquired with the sponsor quotas.
+        </p>
+        <p className="lead-small">
           This illustrative render shows a partner's logo beside the 80 Years emblem on the camarote wall. For each
           company we present, we create a similar image with its own logo.
         </p>
@@ -439,8 +448,8 @@ function Quotas() {
         <h2>Choose your quota. Price scales with the number of guests.</h2>
 
         <div className="toggle" role="tablist" aria-label="Product">
+          <button className={sponsor ? "on" : ""} onClick={() => setSponsor(true)}>With the samba school tribute</button>
           <button className={!sponsor ? "on" : ""} onClick={() => setSponsor(false)}>Camarote only</button>
-          <button className={sponsor ? "on" : ""} onClick={() => setSponsor(true)}>Camarote + Samba School Tribute</button>
         </div>
         <p className="muted small">
           {sponsor
@@ -458,7 +467,7 @@ function Quotas() {
             ))}
           </div>
           <div className="calc-out">
-            <p className="eyebrow gold">{q.label}</p>
+            <p className="eyebrow">{q.label}</p>
             <div className="big-price">{usd(total)}</div>
             <p className="muted">{quotaInvites(q)} invitations × {usd2(perGuest)} per invitation</p>
             <table className="days">
@@ -474,13 +483,12 @@ function Quotas() {
             <thead>
               <tr>
                 <th>Quota</th>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Sat</th>
+                <th>Sun 27 Feb</th>
+                <th>Mon 28 Feb</th>
+                <th>Tue 29 Feb</th>
+                <th>Sat 26 Feb</th>
                 <th>Guests</th>
-                <th>Camarote only</th>
-                <th>Camarote + Tribute</th>
+                <th>{sponsor ? "With the tribute (US$)" : "Camarote only (US$)"}</th>
               </tr>
             </thead>
             <tbody>
@@ -489,16 +497,14 @@ function Quotas() {
                   <td>{x.label}</td>
                   {x.days.map((n, i) => <td key={i}>{n}</td>)}
                   <td><strong>{quotaInvites(x)}</strong></td>
-                  <td>{usd(quotaPrice(x, false))}</td>
-                  <td>{usd(quotaPrice(x, true))}</td>
+                  <td><strong>{usd(quotaPrice(x, sponsor))}</strong></td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
         <p className="small muted">
-          Packages of {QUOTAS.map((x) => quotaInvites(x)).join(", ")} invitations. The project offers {TOTAL_INVITES} invitations in total.
-          Values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1.
+          Each quota is split evenly into even numbers per parade night. Values are indicative at R$ {USD_RATE.toFixed(2)} per US$ 1.
         </p>
       </div>
     </section>
@@ -528,6 +534,10 @@ function Sponsorship() {
           <div className="benefit reveal delay"><h4>Carnival</h4><p>Brand on the shirts of the float pushers, costumes for guests to parade in, and a video wall and film inside the camarote.</p></div>
           <div className="benefit reveal delay2"><h4>After the parade</h4><p>Recognition in the 80 Years commemorative book and visibility with both countries' trade and cultural networks.</p></div>
         </div>
+        <div className="family reveal">
+          <p className="eyebrow gold">Where the investment goes</p>
+          <p><strong>Brand on the parade:</strong> the sponsor's identity appears on the parade, according to the activation package and the quota chosen.</p>
+        </div>
         <div className="incentive reveal">
           <h4>Tax incentives</h4>
           <p>
@@ -543,16 +553,33 @@ function Sponsorship() {
 
 function Activations() {
   const items = [
-    "Naming rights", "Sampling and check-in", "Brand on camarote shirts", "Vans wrap",
-    "LED ad at the camarote", "Adhesive column", "Corner / shops", "Influencer marketing",
+    "Sampling at check-in",
+    "Brand activation at check-in",
+    "Guest bag",
+    "Brand on the guest's shirt",
+    "Vehicle wraps for guest transport",
   ];
+  const camarote = [
+    "Product advertising", "LED panel", "Advertising", "Wraps", "Influencers", "Wrapped column",
+    "Beauty area", "Showcases", "Corner", "Boutiques",
+  ];
+  const parade = ["Shirts", "Floats"];
   return (
     <section className="section alt tight">
       <div className="wrap">
-        <p className="eyebrow gold">Additional activations</p>
-        <h2>Extra visibility, on request.</h2>
+        <p className="eyebrow gold">Activations</p>
+        <h2>Visibility at every step of the night.</h2>
+        <h4 className="sub">Guest experience</h4>
         <div className="chips-static">
           {items.map((x) => <span key={x} className="tag">{x}</span>)}
+        </div>
+        <h4 className="sub">Branding in the camarote</h4>
+        <div className="chips-static">
+          {camarote.map((x) => <span key={x} className="tag">{x}</span>)}
+        </div>
+        <h4 className="sub">Branding on the parade</h4>
+        <div className="chips-static">
+          {parade.map((x) => <span key={x} className="tag">{x}</span>)}
         </div>
         <p className="note">Pricing for each activation is available on request.</p>
       </div>
@@ -653,10 +680,8 @@ function Travel() {
 
         <div className="calendar reveal">
           <h4>Carnival 2028 calendar</h4>
-          <p>
-            Friday 25 February to Wednesday 1 March 2028. Parade nights are set by LIESA. The reference schedule
-            is Sat 26, Sun 27, Mon 28 and Tue 29 February, with the Champions' Parade on 4 March (to be confirmed).
-          </p>
+          <p><strong>Live:</strong> the Samba School parades begin on Friday, 25 February 2028.</p>
+          <p>Sunday 27 February to Saturday 4 March: Special Group and Champions parades, 4 parade nights.</p>
         </div>
       </div>
     </section>
@@ -676,7 +701,7 @@ function Contact() {
         </ol>
         <div className="cta-row">
           {CONTACT_EMAIL ? (
-            <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=India at Brazil's Carnival 2028`}>Request a proposal</a>
+            <a className="btn btn-primary" href={`mailto:${CONTACT_EMAIL}?subject=India at the Rio de Janeiro Carnival - Brazil 2028`}>Request a proposal</a>
           ) : (
             <p className="muted">Contact the team at {SITE}.</p>
           )}
