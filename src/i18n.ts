@@ -136,8 +136,8 @@ export const en = {
     note: "Images are illustrative mock-ups of the camarote kit.",
   },
   lounge: {
-    eyebrow: "Your brand in the lounge",
-    h2: "See how your brand can look on the camarote wall.",
+    eyebrow: "Branding",
+    h2: "Your Brand, on the Avenue",
     p0: "The main lounge of the camarote becomes the project's branded hub — with your identity present across the four nights.",
     p1: "The final design of the India–Brazil private camarote is developed according to the packages acquired with the sponsor quotas.",
     p2: "This illustrative render shows a partner's logo beside the 80 Years emblem on the camarote wall. For each company we present, we create a similar image with its own logo.",
@@ -419,8 +419,8 @@ export const pt: typeof en = {
     note: "As imagens são maquetes ilustrativas do kit do camarote.",
   },
   lounge: {
-    eyebrow: "Sua marca no lounge",
-    h2: "Veja como a sua marca pode aparecer na parede do camarote.",
+    eyebrow: "Branding",
+    h2: "Sua marca na avenida",
     p0: "O lounge principal do camarote se torna o hub de marca do projeto — com a sua identidade presente nas quatro noites.",
     p1: "O design final do camarote privativo Índia-Brasil é desenvolvido de acordo com os pacotes adquiridos junto às cotas dos patrocinadores.",
     p2: "Esta render ilustrativa mostra a logo de um parceiro ao lado do emblema dos 80 anos na parede do camarote. Para cada empresa que apresentamos, criamos uma imagem semelhante com a logo dela.",
