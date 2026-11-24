@@ -240,6 +240,7 @@ function Carnival() {
           ))}
         </div>
         <p className="eyebrow gold">{t.carnival.stageEyebrow}</p>
+        <p className="lead-small">{t.carnival.stageQuote}</p>
         <div className="stats">
           {t.carnival.stageItems.map((s) => (
             <Stat key={s.big} big={s.big} label={s.label} note={s.note} />
@@ -366,6 +367,7 @@ function GuestKit() {
       <div className="wrap">
         <p className="eyebrow gold">{t.kit.eyebrow}</p>
         <h2>{t.kit.h2}</h2>
+        <p className="lead-small kit-lead">{t.kit.skipLead}</p>
         <p className="lead-small kit-lead">{t.kit.lead}</p>
         <p className="lead-small">{t.kit.costume}</p>
         <div className="kit-grid">
@@ -408,6 +410,7 @@ function Partners() {
       <div className="wrap">
         <p className="eyebrow gold">{t.partners.eyebrow}</p>
         <h2>{t.partners.h2}</h2>
+        <p className="lead-small">{t.partners.skipLead}</p>
         <p className="lead-small">{t.partners.lead}</p>
         <div className="partner-grid">
           <div className="partner-card reveal">
